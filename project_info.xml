@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProjectSettings>
+  <Name value="Tumult"/>
+  <Version value="1.0.0"/>
+  <Description value=""/>
+  <BundleIdentifier value="com.consistentInterruption.tumult"/>
+  <PluginCode value="Tult"/>
+  <EmbedAudioFiles value="Yes"/>
+  <EmbedImageFiles value="Yes"/>
+  <SupportFullDynamicsHLAC value="No"/>
+  <AdditionalDspLibraries value=""/>
+  <OSXStaticLibs value=""/>
+  <WindowsStaticLibFolder value=""/>
+  <ExtraDefinitionsWindows value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1"/>
+  <ExtraDefinitionsOSX value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1"/>
+  <ExtraDefinitionsIOS value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1"/>
+  <ExtraDefinitionsLinux value="JUCE_DISABLE_NATIVE_FILECHOOSERS=1"/>
+  <AppGroupID value=""/>
+  <RedirectSampleFolder value=""/>
+  <AAXCategoryFX value="AAX_EPlugInCategory_Effect"/>
+  <VST3Category value="Tools"/>
+  <SupportMonoFX value="No"/>
+  <EnableMidiInputFX value="No"/>
+  <EnableMidiOut value="No"/>
+  <EnableSoundGeneratorsFX value="1"/>
+  <VST3Support value="1"/>
+  <UseRawFrontend value="No"/>
+  <ExpansionType value="Disabled"/>
+  <EncryptionKey value=""/>
+  <LinkExpansionsToProject value="No"/>
+  <ReadOnlyFactoryPresets value="No"/>
+  <ForceStereoOutput value="No"/>
+  <AdminPermissions value="No"/>
+  <EmbedUserPresets value="Yes"/>
+  <OverwriteOldUserPresets value="No"/>
+  <EnableGlobalPreprocessor value="No"/>
+  <UseGlobalAppDataFolderWindows value="No"/>
+  <UseGlobalAppDataFolderMacOS value="No"/>
+  <DefaultUserPreset value=""/>
+  <CompileWithPerfetto value="No"/>
+  <CompileWithDebugSymbols value="No"/>
+  <IncludeLorisInFrontend value="No"/>
+  <ExtraDefinitionsNetworkDll value=""/>
+</ProjectSettings>

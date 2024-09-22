@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="hardsoftclipper" AllowCompilation="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="hardsoftclipper" Bypassed="0"
+        Name="hardsoftclipper" ShowParameters="1">
+    <Nodes>
+      <Node ID="fix32_block" FactoryPath="container.fix32_block" Bypassed="0"
+            Name="fix32_block">
+        <Nodes>
+          <Node ID="snex_shaper" FactoryPath="core.snex_shaper" Bypassed="0"
+                Name="snex_shaper">
+            <Properties>
+              <Property ID="ClassId" Value="hardSoftClipper"/>
+            </Properties>
+            <ComplexData>
+              <Tables/>
+              <SliderPacks/>
+              <AudioFiles/>
+              <Filters/>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1" EmbeddedData=""/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.05" MaxValue="1.0" ID="hard/soft" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="hard/soft" MinValue="0.05" MaxValue="1.0" Value="0.05">
+        <Connections>
+          <Connection NodeId="snex_shaper" ParameterId="hard/soft"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

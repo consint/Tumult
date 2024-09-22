@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptPanel" id="pnlBackground" x="0.0" y="0.0" width="492.0"
+             height="532.0" text="Panel1pnl" borderSize="0.0" borderRadius="0.0"
+             bgColour="4281941823" itemColour="4283126868" itemColour2="4280690985"
+             locked="1" textColour="4284904050"/>
+  <Component type="ScriptPanel" id="pnlHeader" x="0.0" y="10.0" width="490.0"
+             height="30.0" borderRadius="0.0" itemColour="3751743" itemColour2="3751743"
+             borderSize="0.0" bgColour="16777215" textColour="16777215">
+    <Component type="ScriptPanel" id="pnlLogo" x="20.0" y="6.0" borderSize="0.0"
+               borderRadius="0.0" parentComponent="pnlHeader" width="27.0" height="18.0"
+               textColour="4293321691" itemColour="4290556488"/>
+    <Component type="ScriptButton" id="btnBypass" x="457.0" y="8.0" parentComponent="pnlHeader"
+               text="BYPASS" width="14.0" height="14.0" textColour="4284772207"
+               itemColour2="4293321691" itemColour="4284772207"/>
+    <Component type="ScriptButton" id="btnSettings" x="420.0" y="9.0" parentComponent="pnlHeader"
+               text="Settings" width="15.0" height="14.0" itemColour2="4293321691"
+               itemColour="4284772207" textColour="4284772207"/>
+    <Component type="ScriptPanel" id="pnlError" x="160.0" y="8.0" parentComponent="pnlHeader"
+               width="180.0" height="20.0" text="Sample folder not found" textColour="4293321691"
+               itemColour2="4293321691" visible="0"/>
+  </Component>
+  <Component type="ScriptPanel" id="pnlMaster" x="0.0" y="55.0" width="490.0"
+             height="50.0" borderSize="0.0" borderRadius="0.0" itemColour="2500905"
+             itemColour2="2500905" textColour="16777215" bgColour="16777215">
+    <Component type="ScriptSlider" id="knbNoiseGain" x="20.0" y="10.0" text="master_Gain"
+               min="-35.0" max="35.0" width="30.0" height="30.0" itemColour="4280032541"
+               itemColour2="4280690985" bgColour="4281941823" textColour="4293321691"
+               parentComponent="pnlMaster" isPluginParameter="1" pluginParameterName="Gain"
+               defaultValue="-10.0"/>
+    <Component type="ScriptButton" id="btnSelectLeft" x="123.25" y="17.5" width="10.0"
+               height="15.0" parentComponent="pnlMaster" isMomentary="1" itemColour2="4281481272"
+               textColour="4282204995" enabled="0"/>
+    <Component type="ScriptComboBox" id="cmbSelect" x="140.0" y="12.5" max="50"
+               items="Noise::White&#10;Noise::Pink&#10;Noise::Brown&#10;Noise::Velvet&#10;Noise::Crushed&#10;Vinyl::Vinyl 1&#10;Vinyl::Vinyl 2&#10;Vinyl::Vinyl 3&#10;Vinyl::Vinyl 4&#10;Vinyl::Vinyl 5&#10;Static::Electric 1&#10;Static::Electric 2&#10;Static::Film&#10;Static::Gramophone&#10;Static::Radio&#10;Static::TV&#10;Machine::Computer&#10;Machine::Dough&#10;Machine::Fridge 1&#10;Machine::Fridge 2&#10;Machine::Furnance&#10;Machine::Letters&#10;Machine::Oven&#10;Machine::Air 1&#10;Machine::Air 2&#10;Machine::Vending&#10;Machine::Washing&#10;Hum::Alien 1&#10;Hum::Alien 2&#10;Hum::Electric 1&#10;Hum::Electric 2&#10;Hum::VHS&#10;World::City 1&#10;World::City 2&#10;World::City 3&#10;World::Crowd&#10;World::Fire 1&#10;World::Fire 2&#10;World::Fire 3&#10;World::Fire 4&#10;World::Rain 1&#10;World::Rain 2&#10;World::Rain 3&#10;World::Rain 4&#10;World::Rain 5&#10;World::Underground&#10;World::Waterfall 1&#10;World::Waterfall 2&#10;World::Waterfall 3&#10;World::Waterfall 4"
+               useCustomPopup="1" parentComponent="pnlMaster" bgColour="4280690985"
+               itemColour="4280690985" itemColour2="4281941823" width="100.0"
+               height="25.0" textColour="4293321691" isPluginParameter="1" pluginParameterName="Noise Select"/>
+    <Component type="ScriptButton" id="btnSelectRight" x="247.75" y="17.5" width="10.0"
+               height="15.0" parentComponent="pnlMaster" isMomentary="1" itemColour2="4281481272"
+               textColour="4282204995"/>
+    <Component type="ScriptPanel" id="pnlGainName" x="55.0" y="10.0" width="50.0"
+               height="15.0" textColour="4293321691" parentComponent="pnlMaster"/>
+    <Component type="ScriptPanel" id="pnlGainValue" x="55.0" y="23.0" parentComponent="pnlMaster"
+               width="50.0" height="15.0" textColour="4293321691"/>
+    <Component type="ScriptSlider" id="knbMix" x="410.0" y="10.0" text="master_Mix"
+               width="30.0" height="30.0" bgColour="4281941823" textColour="4293321691"
+               defaultValue="0.5" itemColour2="4280690985" parentComponent="pnlMaster"
+               itemColour="4280032541" isPluginParameter="1" pluginParameterName="Mix"/>
+    <Component type="ScriptPanel" id="pnlMixValue" x="440.0" y="23.0" parentComponent="pnlMaster"
+               width="40.0" height="15.0" textColour="4293321691"/>
+    <Component type="ScriptPanel" id="pnlMixName" x="440.0" y="10.0" width="40.0"
+               height="15.0" textColour="4293321691" parentComponent="pnlMaster"/>
+    <Component type="ScriptSlider" id="knbMix1" x="550.0" y="10.0" text="master_Mix"
+               width="30.0" height="30.0" bgColour="4283916898" textColour="4293321691"
+               defaultValue="0.5" itemColour2="4284377706" parentComponent="pnlMaster"
+               itemColour="4280427813" visible="0"/>
+    <Component type="ScriptPanel" id="pnlDuck" x="280.0" y="10.0" width="110.0"
+               height="30.0" textColour="4293321691" borderSize="0.0" borderRadius="0.0"
+               bgColour="4280690985" itemColour2="4290556488" itemColour="4281612601"
+               parentComponent="pnlMaster"/>
+    <Component type="ScriptPanel" id="Panel1" x="280.0" y="10.0" parentComponent="pnlMaster"
+               width="110.0" height="30.0" borderRadius="3.0" itemColour="2500905"
+               itemColour2="2500905" bgColour="16777215" textColour="4281941823"
+               borderSize="1.0"/>
+  </Component>
+  <Component type="ScriptPanel" id="pnlSwitch" x="0.0" y="115.0" width="490.0"
+             height="170.0" borderRadius="0.0" borderSize="0.0" itemColour="3751743"
+             itemColour2="3751743" bgColour="4280230434" textColour="16777215">
+    <Component type="ScriptSlider" id="knbSwitch" x="70.0" y="25.0" width="100.0"
+               height="100.0" parentComponent="pnlSwitch" bgColour="4281941823"
+               itemColour2="4280690985" textColour="4293321691" itemColour="4280032541"
+               text="master_knbSwitch" isPluginParameter="1" pluginParameterName="Mode"
+               min="-1.0"/>
+    <Component type="ScriptPanel" id="pnlDuckBack" x="215.0" y="10.0" width="240.0"
+               height="160.0" borderSize="0.0" borderRadius="60.0" parentComponent="pnlSwitch"
+               itemColour="0" itemColour2="0" textColour="4284904050" enabled="0">
+      <Component type="ScriptSlider" id="knbDuckRelease" x="160.0" y="60.0" text="Release"
+                 processorId="Script FX1" parameterId="duck_attack" max="500.0"
+                 parentComponent="pnlDuckBack" width="50.0" height="80.0" bgColour="4281941823"
+                 itemColour2="4280690985" textColour="4293321691" middlePosition="50.0"
+                 itemColour="3424394525" isPluginParameter="1" pluginParameterName="Duck Release"
+                 defaultValue="15.0"/>
+      <Component type="ScriptSlider" id="knbDuckAttac" x="20.0" y="50.0" text="Attack"
+                 processorId="Script FX1" parameterId="duck_release" max="500.0"
+                 parentComponent="pnlDuckBack" width="50.0" height="80.0" bgColour="4281941823"
+                 itemColour2="4280690985" textColour="4293321691" middlePosition="50.0"
+                 itemColour="3424394525" isPluginParameter="1" pluginParameterName="Duck Attack"/>
+      <Component type="ScriptSlider" id="knbDuckThresh" x="90.0" y="20.0" text="Thresh"
+                 processorId="Script FX1" parameterId="duck_threshold" mode="Decibel"
+                 min="-100.0" max="0.0" stepSize="0.1000000014901161" suffix=" dB"
+                 middlePosition="-18.0" parentComponent="pnlDuckBack" width="50.0"
+                 height="80.0" bgColour="4281941823" itemColour2="4280690985"
+                 textColour="4293321691" itemColour="3424394525" isPluginParameter="1"
+                 pluginParameterName="Duck Thresh" defaultValue="-20.0"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlFollowBack" x="215.0" y="10.0" width="230.0"
+               height="160.0" parentComponent="pnlSwitch" itemColour="0" itemColour2="0"
+               bgColour="16777215" textColour="16777215" borderSize="0.0" borderRadius="0.0"
+               visible="0" enabled="0">
+      <Component type="ScriptSlider" id="knbFollowRelease" x="160.0" y="60.0"
+                 text="Release" processorId="Script FX1" parameterId="follow_release"
+                 max="500.0" parentComponent="pnlFollowBack" width="50.0" height="80.0"
+                 bgColour="4281941823" textColour="4293321691" itemColour2="4280690985"
+                 itemColour="3424394525" middlePosition="50.0" pluginParameterName="Follow Release"
+                 defaultValue="15.0"/>
+      <Component type="ScriptSlider" id="knbFollowAttac" x="20.0" y="50.0" text="Attack"
+                 processorId="Script FX1" parameterId="follow_attac" max="500.0"
+                 parentComponent="pnlFollowBack" width="50.0" height="80.0" bgColour="4281941823"
+                 textColour="4293321691" itemColour2="4280690985" middlePosition="50.0"
+                 itemColour="3424394525" isPluginParameter="1" pluginParameterName="Follow Attack"/>
+      <Component type="ScriptSlider" id="knbFollowThresh" x="90.0" y="20.0" text="Thresh"
+                 processorId="Script FX1" parameterId="follow_threshhold" mode="Decibel"
+                 min="-100.0" max="0.0" stepSize="0.1000000014901161" suffix=" dB"
+                 middlePosition="-18.0" parentComponent="pnlFollowBack" width="50.0"
+                 height="80.0" bgColour="4281941823" textColour="4293321691" itemColour2="4280690985"
+                 itemColour="3424394525" isPluginParameter="1" pluginParameterName="Follow Thresh"
+                 defaultValue="-20.0"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlRaw" x="70.0" y="123.0" parentComponent="pnlSwitch"
+               borderSize="0.0" borderRadius="0.0" width="100.0" height="20.0"
+               textColour="4293321691" bgColour="4281941823" itemColour="4283126868"
+               itemColour2="4283126868"/>
+    <Component type="ScriptPanel" id="pnlSwitchValue" x="100.0" y="139.0" parentComponent="pnlSwitch"
+               borderSize="0.0" borderRadius="0.0" width="40.0" height="19.0"
+               textColour="4293321691" itemColour="4282468424" itemColour2="4283126868"/>
+  </Component>
+  <Component type="ScriptPanel" id="pnlEQ" x="2.0" y="300.0" borderSize="0.0"
+             borderRadius="0.0" bgColour="3751743" width="490.0" height="220.0"
+             itemColour2="2500905" itemColour="4936788" textColour="6713970">
+    <Component type="ScriptPanel" id="pnlFFTBack" x="18.0" y="20.0" width="450.0"
+               height="190.0" parentComponent="pnlEQ" borderRadius="8.0" borderSize="0.0"
+               itemColour="4280690985" itemColour2="4279506454" textColour="4283126868"
+               bgColour="4281941823"/>
+    <Component type="ScriptFloatingTile" id="ftFFTGrid" x="20.0" y="25.0" width="446.0"
+               height="80.0" parentComponent="pnlEQ" ContentType="AudioAnalyser"
+               bgColour="3355443" itemColour="8947848" itemColour2="4281349429"
+               Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser1&quot;,&#10;  &quot;Index&quot;: 2,&#10;  &quot;FollowWorkspace&quot;: false&#10;}"
+               textColour="0"/>
+    <Component type="ScriptPanel" id="pnlFFT" x="20.0" y="20.0" width="446.0"
+               height="90.0" textColour="4293321691" parentComponent="pnlEQ"
+               itemColour="3714478706" itemColour2="3626379561"/>
+    <Component type="ScriptFloatingTile" id="ftEQ" x="8.0" y="10.0" width="470.0"
+               height="110.0" ContentType="DraggableFilterPanel" bgColour="2500905"
+               itemColour="2281701375" itemColour2="4281941823" Data="{&#10;  &quot;ProcessorId&quot;: &quot;ParaEQ1&quot;,&#10;  &quot;Index&quot;: -1,&#10;  &quot;FollowWorkspace&quot;: false,&#10;  &quot;AllowFilterResizing&quot;: false,&#10;  &quot;AllowDynamicSpectrumAnalyser&quot;: 0,&#10;  &quot;UseUndoManager&quot;: false,&#10;  &quot;ResetOnDoubleClick&quot;: false,&#10;  &quot;GainRange&quot;: 24.0,&#10;  &quot;AllowContextMenu&quot;: false&#10;}"
+               parentComponent="pnlEQ" textColour="4293321691" itemColour3="4284904050"/>
+    <Component type="ScriptButton" id="btnEqHpWEnable" x="38.0" y="119.0" text="eq_enable_highpass"
+               width="50.0" height="20.0" parentComponent="pnlEQ" textColour="4293321691"
+               itemColour2="870769627" isPluginParameter="1" pluginParameterName="F1 Enabled"/>
+    <Component type="ScriptSlider" id="knbEqHpFreq" x="28.0" y="148.0" text="eq_Freq"
+               mode="Frequency" min="20.0" max="20000.0" middlePosition="1500.0"
+               width="70.0" height="15.0" stepSize="1.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F1 Frequency"
+               defaultValue="50.0" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEqHpQ" x="28.0" y="168.0" text="eq_Q"
+               width="70.0" height="15.0" parentComponent="pnlEQ" textColour="4293321691"
+               isPluginParameter="1" pluginParameterName="F1 Q" enabled="0.0"/>
+    <Component type="ScriptButton" id="btnEQPeak1Enable" x="120.0" y="119.0"
+               text="eq_enable_bell1" width="30.0" height="20.0" parentComponent="pnlEQ"
+               textColour="4293321691" itemColour2="870769627" isPluginParameter="1"
+               pluginParameterName="F2 Enabled"/>
+    <Component type="ScriptComboBox" id="cmbFilter2Switch" x="143.0" y="118.0"
+               max="2" width="50.0" height="20.0" items="bell&#10;lowshelf"
+               textColour="4293321691" bgColour="4280690985" parentComponent="pnlEQ"
+               isPluginParameter="1" pluginParameterName="F2 Filter" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak1Freq" x="118.0" y="148.0" text="eq_Freq"
+               width="70.0" height="15.0" mode="Frequency" min="20.0" max="20000.0"
+               stepSize="1.0" suffix=" Hz" middlePosition="1500.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F2 Frequency"
+               defaultValue="175.0" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak1Gain" x="118.0" y="188.0" text="eq_Gain"
+               width="70.0" height="15.0" min="-24.0" max="24.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F2 Gain"
+               enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak1Q" x="118.0" y="168.0" text="eq_Q"
+               width="70.0" height="15.0" parentComponent="pnlEQ" textColour="4293321691"
+               isPluginParameter="1" pluginParameterName="F2 Q" enabled="0.0"/>
+    <Component type="ScriptButton" id="btnEQPeak2Enable" x="216.0" y="119.0"
+               text="eq_enable_bell2" width="50.0" height="20.0" parentComponent="pnlEQ"
+               textColour="4293321691" itemColour2="870769627" isPluginParameter="1"
+               pluginParameterName="F3 Enabled"/>
+    <Component type="ScriptButton" id="btnEQPeak3Enable" x="299.0" y="119.0"
+               text="eq_enable_bell3" width="30.0" height="20.0" parentComponent="pnlEQ"
+               textColour="4293321691" itemColour2="870769627" isPluginParameter="1"
+               pluginParameterName="F4 Enabled"/>
+    <Component type="ScriptComboBox" id="cmbFilter4Switch" x="322.0" y="118.0"
+               max="2" width="50.0" height="20.0" items="bell&#10;highshelf"
+               textColour="4293321691" parentComponent="pnlEQ" isPluginParameter="1"
+               pluginParameterName="F4 Filter" enabled="0.0"/>
+    <Component type="ScriptButton" id="btnEQLPEnable" x="398.0" y="119.0" text="eq_enable_lowpass"
+               width="50.0" height="20.0" parentComponent="pnlEQ" textColour="4293321691"
+               itemColour2="870769627" isPluginParameter="1" pluginParameterName="F5 Enabled"/>
+    <Component type="ScriptSlider" id="knbEQPeak3req" x="298.0" y="148.0" text="eq_Freq"
+               width="70.0" height="15.0" mode="Frequency" min="20.0" max="20000.0"
+               stepSize="1.0" suffix=" Hz" middlePosition="1500.0" parentComponent="pnlEQ"
+               textColour="4293321691" pluginParameterName="F4 Frequency" isPluginParameter="1"
+               defaultValue="2500.0" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak2Freq" x="208.0" y="148.0" text="eq_Freq"
+               width="70.0" height="15.0" mode="Frequency" min="20.0" max="20000.0"
+               stepSize="1.0" suffix=" Hz" middlePosition="1500.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F3 Frequency"
+               defaultValue="600.0" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak2Gain" x="208.0" y="188.0" text="eq_Gain"
+               width="70.0" height="15.0" min="-24.0" max="24.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F3 Gain"
+               enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak3Gain" x="298.0" y="188.0" text="eq_Gain"
+               width="70.0" height="15.0" min="-24.0" max="24.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F4 Gain"
+               enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak2Q" x="208.0" y="168.0" text="eq_Q"
+               width="70.0" height="15.0" parentComponent="pnlEQ" textColour="4293321691"
+               isPluginParameter="1" pluginParameterName="F3 Q" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQPeak3Q" x="298.0" y="168.0" text="eq_Q"
+               width="70.0" height="15.0" parentComponent="pnlEQ" textColour="4293321691"
+               isPluginParameter="1" pluginParameterName="F4 Q" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEqLPFreq" x="388.0" y="148.0" text="eq_Freq"
+               mode="Frequency" min="20.0" max="20000.0" middlePosition="1500.0"
+               width="70.0" height="15.0" stepSize="1.0" parentComponent="pnlEQ"
+               textColour="4293321691" isPluginParameter="1" pluginParameterName="F5 Frequency"
+               defaultValue="8500.0" enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEqLPQ" x="388.0" y="168.0" text="eq_Q"
+               width="70.0" height="15.0" parentComponent="pnlEQ" textColour="4293321691"
+               middlePosition="0.300000011920929" isPluginParameter="1" pluginParameterName="F5 Q"
+               enabled="0.0"/>
+    <Component type="ScriptSlider" id="knbEQHp1Gain" x="20.0" y="340.0" text="eq_Gain"
+               width="100.0" height="50.0" min="-24.0" max="24.0" stepSize="0.1000000014901161"
+               visible="0" parentComponent="pnlEQ"/>
+    <Component type="ScriptSlider" id="knbEQLp1Gain" x="500.0" y="340.0" text="eq_Gain"
+               width="100.0" height="50.0" min="-24.0" max="24.0" stepSize="0.1000000014901161"
+               visible="0" parentComponent="pnlEQ"/>
+  </Component>
+  <Component type="ScriptPanel" id="pnlSettings" x="2.0" y="55.0" width="486.0"
+             height="470.0" borderSize="0.0" borderRadius="0.0" textColour="4293321691"
+             visible="0.0">
+    <Component type="ScriptFloatingTile" id="ftSettings" x="28.0" y="115.0"
+               width="440.0" height="180.0" ContentType="CustomSettings" bgColour="4280690985"
+               itemColour="4280690985" itemColour2="4281941823" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: false,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    1.75,&#10;    2.0&#10;  ]&#10;}"
+               parentComponent="pnlSettings" textColour="4293321691" Font="Roboto-Medium"/>
+    <Component type="ScriptComboBox" id="cmbSettingsAnalyzer" x="221.0" y="50.0"
+               max="2" parentComponent="pnlSettings" width="208.0" height="30.0"
+               bgColour="4280690985" itemColour="4280690985" itemColour2="4281941823"
+               textColour="4293321691" items="Enabled&#10;Disabled"/>
+    <Component type="ScriptPanel" id="pnlSettingsFFT" x="61.0" y="55.0" parentComponent="pnlSettings"
+               borderRadius="0.0" borderSize="0.0" textColour="4293321691" width="150.0"
+               height="20.0"/>
+    <Component type="ScriptComboBox" id="cmbSettingsHostPlay" x="221.0" y="90.0"
+               max="2" parentComponent="pnlSettings" width="208.0" height="30.0"
+               bgColour="4280690985" itemColour="4280690985" itemColour2="4281941823"
+               textColour="4293321691" items="Enabled&#10;Disabled" text="cmbSettings"/>
+    <Component type="ScriptPanel" id="pnlSettingsHostPlay" x="61.0" y="95.0"
+               parentComponent="pnlSettings" borderRadius="0.0" borderSize="0.0"
+               textColour="4293321691" width="150.0" height="20.0"/>
+    <Component type="ScriptButton" id="btnChangeSampleFolder" x="45.0" y="210.0"
+               parentComponent="pnlSettings" text="Change Sample Folder Location"
+               width="395.0" height="30.0" isMomentary="1" textColour="4293321691"
+               itemColour2="4293321691" bgColour="3177474923" itemColour="3178133367"/>
+    <Component type="ScriptPanel" id="pnlSampleFolderLocation" x="38.0" y="245.0"
+               parentComponent="pnlSettings" width="410.0" height="40.0" textColour="4293321691"
+               text="/home/buerdman/HISE Projekte/Tumult/Samples"/>
+    <Component type="ScriptPanel" id="pnlAbout" x="28.0" y="330.0" parentComponent="pnlSettings"
+               width="430.0" height="120.0" textColour="4293321691">
+      <Component type="ScriptButton" id="btnLinkWebsite" x="90.0" y="80.0" saveInPreset="0"
+                 isMomentary="1" text="www.consint.net" itemColour="4284772207"
+                 itemColour2="4284772207" textColour="4293321691" parentComponent="pnlAbout"/>
+      <Component type="ScriptButton" id="btnLinkGithub" x="210.0" y="80.0" saveInPreset="0"
+                 isMomentary="1" text="github.com/consint" itemColour2="4284772207"
+                 textColour="4293321691" parentComponent="pnlAbout"/>
+    </Component>
+  </Component>
+  <Component type="ScriptPanel" id="pnlMsgReload" x="0.0" y="0.0" width="490.0"
+             height="532.0" textColour="4293321691" bgColour="4280690985"
+             text="" visible="0">
+    <Component type="ScriptButton" id="btnGotIt" x="190.0" y="260.0" parentComponent="pnlMsgReload"
+               text="Got it" isMomentary="1" textColour="4293321691" bgColour="3177474923"
+               itemColour="3178133367"/>
+  </Component>
+</ContentProperties>

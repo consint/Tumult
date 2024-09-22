@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap CrossfadeGamma="1.0" ID="sampled_noises" RRGroupAmount="1.0"
+           MicPositions=";" SaveMode="0">
+  <sample Root="12" LoKey="12" HiKey="12" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}vinyl/vinyl1_Runoff 139 BPM.wav" Duplicate="1"
+          LoopStart="0" LoopEnd="304575" LoopEnabled="1" Normalized="1"
+          NormalizedPeak="4.471311569213867" SampleEnd="304576" MonolithOffset="0"
+          MonolithLength="307200" SampleRate="44100.0"/>
+  <sample Root="13" LoKey="13" HiKey="13" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}vinyl/vinyl2_oldvinyl_128.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="1.325888156890869" LoopEnabled="1"
+          SampleStartMod="0" LoopXFade="0" LoopStart="151503" SampleStart="151503"
+          LoopEnd="332286" SampleEnd="336682" MonolithOffset="307200" MonolithLength="339968"
+          SampleRate="44100.0"/>
+  <sample Root="14" LoKey="14" HiKey="14" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}vinyl/vinyl3_Vinyl Dust2.wav" Duplicate="1"
+          LoopEnabled="1" Normalized="1" NormalizedPeak="2.171072721481323"
+          LoopXFade="0" LoopStart="16997" SampleStart="16997" LoopEnd="355747"
+          SampleEnd="355747" MonolithOffset="647168" MonolithLength="430080"
+          SampleRate="44100.0"/>
+  <sample Root="15" LoKey="15" HiKey="15" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}vinyl/vinyl4_Vinyl Crackle Analogue 1.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="1.121961236000061"
+          SampleStart="46084" LoopXFade="0" LoopStart="46084" SampleEnd="277235"
+          LoopEnd="277235" MonolithOffset="1077248" MonolithLength="286720"
+          SampleRate="44100.0"/>
+  <sample Root="16" LoKey="16" HiKey="16" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}vinyl/vinyl5_vinyl-crackle-1_edit.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="7.143666744232178"
+          LoopEnabled="1" LoopXFade="0" LoopStart="7274" SampleStart="7274"
+          SampleEnd="580618" LoopEnd="580618" MonolithOffset="1363968"
+          MonolithLength="610304" SampleRate="44100.0"/>
+  <sample Root="24" LoKey="24" HiKey="24" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}static/static1_electric-zap-electricity-2.wav"
+          Duplicate="1" LoopXFade="0" LoopStart="35135" SampleStart="32533"
+          SampleEnd="465633" LoopEnd="465633" Normalized="1" NormalizedPeak="1.032915592193604"
+          LoopEnabled="1" MonolithOffset="1974272" MonolithLength="524288"
+          SampleRate="44100.0"/>
+  <sample Root="25" LoKey="25" HiKey="25" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}static/static2_electrical-noise.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="2.306631088256836"
+          LoopXFade="0" LoopStart="89526" SampleStart="89523" LoopEnd="303768"
+          SampleEnd="303768" MonolithOffset="2498560" MonolithLength="311296"
+          SampleRate="44100.0"/>
+  <sample Root="26" LoKey="26" HiKey="26" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}static/static3_film_static_03_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="5.113607883453369"
+          LoopEnabled="1" LoopXFade="0" LoopStart="0" SampleStart="0" LoopEnd="476062"
+          SampleEnd="476062" MonolithOffset="2809856" MonolithLength="888832"
+          SampleRate="44100.0"/>
+  <sample Root="27" LoKey="27" HiKey="27" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}static/static4_gramophone_stereo.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="4.502336025238037"
+          LoopEnabled="1" LoopEnd="708585" SampleEnd="708585" LoopStart="0"
+          MonolithOffset="3698688" MonolithLength="765952" SampleRate="48000.0"/>
+  <sample Root="28" LoKey="28" HiKey="28" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}static/static5_radio-fuzz-for-old-radio-broadcast-ff233_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="4.734575748443604"
+          LoopEnabled="1" SampleEnd="748563" LoopEnd="748563" MonolithOffset="4464640"
+          MonolithLength="790528" SampleRate="48000.0"/>
+  <sample Root="29" LoKey="29" HiKey="29" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}static/static6_tv-static_cut.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="1.625880718231201" LoopEnabled="1"
+          LoopEnd="853950" SampleEnd="853950" LoopXFade="0" LoopStart="85395"
+          SampleStart="85395" MonolithOffset="5255168" MonolithLength="978944"
+          SampleRate="96000.0"/>
+  <sample Root="36" LoKey="36" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine1_computer_fan_hum_cut.wav"
+          Duplicate="1" LoopEnabled="1" LoopXFade="0" LoopStart="9327"
+          SampleStart="9257" SampleEnd="185304" LoopEnd="185304" Normalized="1"
+          NormalizedPeak="3.728720903396606" MonolithOffset="6234112" MonolithLength="507904"
+          SampleRate="48000.0"/>
+  <sample Root="37" LoKey="37" HiKey="37" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine2_dough-machine-electricity-001_cut.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="1.668346881866455"
+          LoopEnd="303167" SampleEnd="303167" MonolithOffset="6742016"
+          MonolithLength="438272" SampleRate="48000.0"/>
+  <sample Root="38" LoKey="38" HiKey="38" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine3_fridge-hum-kitchen-2012_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="3.118386030197144"
+          LoopEnabled="1" LoopXFade="0" LoopStart="2614" SampleStart="2452"
+          LoopEnd="195108" SampleEnd="195108" MonolithOffset="7180288"
+          MonolithLength="196608" SampleRate="48000.0"/>
+  <sample Root="39" LoKey="39" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine4_fridge-hum-loud-saint-john_cut.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="4.926037311553955"
+          SampleStart="39534" LoopXFade="0" LoopStart="39783" SampleEnd="64203"
+          LoopEnd="63833" MonolithOffset="7376896" MonolithLength="229376"
+          SampleRate="48000.0"/>
+  <sample Root="40" LoKey="40" HiKey="40" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine5_furnace-propane-pump-hum-rattle-nearby.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="4.167896270751953"
+          SampleEnd="472661" MonolithOffset="7606272" MonolithLength="475136"
+          SampleRate="48000.0"/>
+  <sample Root="41" LoKey="41" HiKey="41" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine6_lettersort.wav" Duplicate="1"
+          LoopEnabled="1" Normalized="1" NormalizedPeak="5.440298080444336"
+          LoopEnd="188919" SampleEnd="189775" LoopXFade="0" LoopStart="20709"
+          SampleStart="19002" MonolithOffset="8081408" MonolithLength="241664"
+          SampleRate="48000.0"/>
+  <sample Root="42" LoKey="42" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine7_oven-hum-2_cut.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="3.091612339019775"
+          SampleStart="7211" LoopXFade="0" LoopStart="7323" LoopEnd="473655"
+          SampleEnd="473655" MonolithOffset="8323072" MonolithLength="483328"
+          SampleRate="48000.0"/>
+  <sample Root="43" LoKey="43" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine8_tattoo-air-conditioning-blowing-traffic-hum-outside_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="7.856149673461914"
+          LoopEnabled="1" LoopXFade="0" LoopStart="2662" SampleStart="2485"
+          LoopEnd="113822" SampleEnd="114105" MonolithOffset="8806400"
+          MonolithLength="143360" SampleRate="48000.0"/>
+  <sample Root="44" LoKey="44" HiKey="44" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine9_thailand-hotel-hallway-heavy-ventilation-hum-distant-voices-man-spits-middle.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="4.239616870880127"
+          LoopEnabled="1" SampleStart="30455" LoopXFade="0" LoopStart="30455"
+          LoopEnd="145874" SampleEnd="145874" MonolithOffset="8949760"
+          MonolithLength="163840" SampleRate="48000.0"/>
+  <sample Root="45" LoKey="45" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine10_vending-machine-hum_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="1.343611598014832"
+          LoopEnabled="1" LoopXFade="0" LoopStart="2077" SampleStart="1976"
+          SampleEnd="178064" LoopEnd="178009" MonolithOffset="9113600"
+          MonolithLength="200704" SampleRate="44100.0"/>
+  <sample Root="46" LoKey="46" HiKey="46" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}machine/machine11_washing-machine-rinse.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="1.623711705207825"
+          LoopEnabled="1" SampleStart="5115" LoopXFade="0" LoopStart="5171"
+          LoopEnd="408415" SampleEnd="408415" MonolithOffset="9314304"
+          MonolithLength="442368" SampleRate="44100.0"/>
+  <sample Root="48" LoKey="48" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}hum/hum1_0ktober_hyperspace_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="4.8480544090271"
+          LoopEnabled="1" LoopXFade="1426" LoopStart="32031" SampleStart="13434"
+          LoopEnd="432044" SampleEnd="436956" MonolithOffset="9756672"
+          MonolithLength="450560" SampleRate="44100.0"/>
+  <sample Root="49" LoKey="49" HiKey="49" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}hum/hum2_alienhum1.wav" Duplicate="1"
+          LoopEnabled="1" Normalized="1" NormalizedPeak="12.58855152130127"
+          LoopXFade="363" LoopStart="20333" SampleStart="18340" LoopEnd="327093"
+          SampleEnd="327093" MonolithOffset="10207232" MonolithLength="352256"
+          SampleRate="44100.0"/>
+  <sample Root="50" LoKey="50" HiKey="50" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}hum/hum3_joedeshon__electrical_hum_01_cut.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="6.266590118408203"
+          LoopEnabled="1" SampleStart="228196" LoopXFade="32" LoopStart="228330"
+          SampleEnd="636100" LoopEnd="635978" MonolithOffset="10559488"
+          MonolithLength="737280" SampleRate="48000.0"/>
+  <sample Root="51" LoKey="51" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}hum/hum4_loose-connection-feedback-hum.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="4.177993297576904"
+          LoopEnabled="1" SampleStart="11502" LoopXFade="454" LoopStart="12995"
+          SampleEnd="113658" LoopEnd="108241" MonolithOffset="11296768"
+          MonolithLength="307200" SampleRate="44100.0"/>
+  <sample Root="52" LoKey="52" HiKey="52" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}hum/hum5_vhs-hum.wav" Duplicate="1"
+          LoopEnabled="1" Normalized="1" NormalizedPeak="49.20120239257812"
+          SampleStart="3500" LoopXFade="0" LoopStart="3623" LoopEnd="195577"
+          SampleEnd="195587" MonolithOffset="11603968" MonolithLength="442368"
+          SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}world/city1_city-ambiance-heavy-snow-wind.wav"
+          Duplicate="1" LoopEnabled="1" Normalized="1" NormalizedPeak="20.23072242736816"
+          LoopEnd="270345" LoopXFade="22" LoopStart="20452" SampleStart="20430"
+          SampleEnd="279388" SampleStartMod="0"/>
+  <sample Root="61" LoKey="61" HiKey="61" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}world/city2_city-ambience-at-night-3.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="19.74375534057617"
+          LoopEnabled="1" LoopXFade="0" LoopStart="127916" SampleStart="127894"
+          SampleEnd="723297" LoopEnd="723277"/>
+  <sample Root="62" LoKey="62" HiKey="62" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}world/city3_distant-city-evening-traffic-5th-floor-balcony.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="65.33081817626953"
+          SampleStart="2604" LoopXFade="0" LoopStart="3141" LoopEnd="254674"
+          SampleEnd="256615" LoopEnabled="1"/>
+  <sample Root="63" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/crowd_large_crowd_medium_distance_stereo.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="7.065114498138428"
+          SampleStart="27134" LoopXFade="1138" LoopStart="28272" LoopEnd="509508"
+          SampleEnd="509519" LoopEnabled="1"/>
+  <sample Root="64" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire1_ambiance_campfire_loop_stereo.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.165103673934937"
+          LoopStart="8726" LoopEnabled="1" LoopEnd="605773"/>
+  <sample Root="65" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire2.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="1.231139183044434"
+          LoopStart="14397" LoopEnabled="1" LoopEnd="563364"/>
+  <sample Root="66" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire3_campfire-01.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="11.9069766998291"
+          LoopStart="3285" LoopEnabled="1" LoopEnd="477316"/>
+  <sample Root="67" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire4_campfire.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="6.605119705200195"
+          LoopEnabled="1" LoopStart="204582" LoopEnd="479948" LoopXFade="0"
+          SampleStart="199418"/>
+  <sample Root="68" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain1_field_la-rain_park_under-stone-bridge_02.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="15.79180717468262"
+          LoopEnabled="1" LoopStart="7674" LoopEnd="505305"/>
+  <sample Root="69" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain2_forest-cabin-summer-rain-5.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="42.95000457763672"
+          LoopXFade="0" LoopStart="102527" SampleStart="100635" LoopEnabled="1"
+          LoopEnd="474506"/>
+  <sample Root="70" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain3_rain-and-thunder-in-the-countryside.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="11.69815731048584"
+          LoopStart="0" LoopEnabled="1" LoopEnd="214454"/>
+  <sample Root="71" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain4_rain-in-the-midnight-city.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="10.02323722839355"
+          LoopStart="5776" LoopEnabled="1" LoopEnd="517353" SampleStart="0"
+          LoopXFade="0"/>
+  <sample Root="72" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain5_rain-thunder-and-traffic.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="44.27827453613281"
+          LoopStart="8260" LoopEnabled="1" LoopEnd="462753"/>
+  <sample Root="73" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/underground_large-underground-metro-station-heavy-ventilation-and-distant-echo-voices.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="5.971113204956055"
+          LoopEnabled="1" LoopStart="4337" LoopEnd="540274" LoopXFade="151"/>
+  <sample Root="74" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall1_hidden-waterfall.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="8.204988479614258"
+          LoopStart="50581" LoopEnabled="1" LoopEnd="486219" SampleStart="43947"
+          LoopXFade="0"/>
+  <sample Root="75" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall2_krka_waterfall2_f_4824.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="6.603414535522461"
+          LoopEnabled="1" LoopStart="3841" LoopEnd="507071"/>
+  <sample Root="76" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall3_turbulent-river-waterfall.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="1.56901752948761"
+          LoopEnabled="1" LoopStart="48359" LoopEnd="485657" SampleEnd="492941"
+          SampleStart="39435" LoopXFade="0"/>
+  <sample Root="77" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall4_sound.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="1.00000011920929"
+          LoopEnabled="1" LoopStart="13153" LoopEnd="518446"/>
+</samplemap>
