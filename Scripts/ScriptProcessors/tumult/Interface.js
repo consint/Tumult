@@ -152,16 +152,9 @@ pnlBackground.setPaintRoutine(function(g)
 	g.addNoise(graphicNoise);
 });
 
-// Logo
-const var pnlLogo = Content.getComponent("pnlLogo");
-pnlLogo.setPaintRoutine(function(g)
-{
-	g.setColour(pnlLogo.get("textColour"));
-	g.fillPath(ciLogo, pnlLogo.getLocalBounds(0));
-});
-
 // Buttons 
 const var ftEQ = Content.getComponent("ftEQ");
+const var btnLogo = Content.getComponent("btnLogo");
 reg dragHandleic2 = ftEQ.get("itemColour2");
 reg dragHandleic3 = ftEQ.get("itemColour3");
 reg dragHandletxtc = ftEQ.get("textColour");
@@ -271,6 +264,11 @@ laf.registerFunction("drawToggleButton", function(g, obj)
 	else if (obj.text =="btnEdit")
 	{
 		g.drawPath(edit, [1, 1, a[2]-2, a[3]-2], 1);
+	}
+	else if (obj.text == "btnLogo")
+	{
+		g.setColour(btnLogo.get("textColour"));
+		g.fillPath(ciLogo, btnLogo.getLocalBounds(0));
 	}
 	else if (obj.text == "BYPASS")
 	{
@@ -714,22 +712,6 @@ pnlAbout.setPaintRoutine(function(g)
 	g.drawAlignedText("Version 1.0.0", [0, 55, a[2], 20], "centred");
 });
 
-inline function onbtnLinkWebsiteControl(component, value)
-{
-	if (value)
-		Engine.openWebsite("https://www.cosint.net");
-};
-Content.getComponent("btnLinkWebsite").setControlCallback(onbtnLinkWebsiteControl);
-
-inline function onbtnLinkGithubControl(component, value)
-{
-	if (value)
-		Engine.openWebsite("https://github.com/consint");
-};
-Content.getComponent("btnLinkGithub").setControlCallback(onbtnLinkGithubControl);
-
-
-
 // EQ Back
 const var pnlFFTBack = Content.getComponent("pnlFFTBack");
 
@@ -844,6 +826,26 @@ pnlFFT.setPaintRoutine(function(g)
 	g.fillPath(this.data.buffer, a);
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ##############
 // GUI Logic
 // ##############
@@ -864,6 +866,27 @@ inline function onbtnSettingsControl(component, value)
 	pnlSettings.set("visible", 1-value);
 };
 Content.getComponent("btnSettings").setControlCallback(onbtnSettingsControl);
+
+// btnLogo
+const var btnSettings = Content.getComponent("btnSettings");
+inline function onbtnLogoControl(component, value)
+{
+	if (!value)
+		return;
+	
+	if (btnSettings.getValue())
+	{
+		btnSettings.setValue(0);
+		btnSettings.changed();
+	}
+	else
+	{
+		btnSettings.setValue(1);
+		btnSettings.changed();
+	}
+};
+Content.getComponent("btnLogo").setControlCallback(onbtnLogoControl);
+
 
 const var gc = Engine.getGlobalRoutingManager();
 const gcSetFFT = gc.getCable("gcSetFFT");
@@ -911,6 +934,28 @@ inline function onbtnGotItControl(component, value)
 		pnlMsgReload.set("visible", 0);
 };
 Content.getComponent("btnGotIt").setControlCallback(onbtnGotItControl);
+
+// Link Buttons
+inline function onbtnLinkWebsiteControl(component, value)
+{
+	if (value)
+		Engine.openWebsite("https://www.cosint.net");
+};
+Content.getComponent("btnLinkWebsite").setControlCallback(onbtnLinkWebsiteControl);
+
+inline function onbtnLinkGithubControl(component, value)
+{
+	if (value)
+		Engine.openWebsite("https://github.com/consint");
+};
+Content.getComponent("btnLinkGithub").setControlCallback(onbtnLinkGithubControl);
+
+inline function onbtnKofiControl(component, value)
+{
+	if (value)
+		Engine.openWebsite("https://ko-fi.com/consint");
+};
+Content.getComponent("btnKofi").setControlCallback(onbtnKofiControl);
 
 
 // Gate Displays

@@ -10,7 +10,8 @@
           <ChildProcessors/>
           <Content>
             <Control type="ScriptButton" id="btnBypass" value="0.0"/>
-            <Control type="ScriptButton" id="btnSettings" value="1.0"/>
+            <Control type="ScriptButton" id="btnSettings" value="1"/>
+            <Control type="ScriptButton" id="btnLogo" value="0.0"/>
             <Control type="ScriptSlider" id="knbNoiseGain" value="-10.0"/>
             <Control type="ScriptButton" id="btnSelectLeft" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbSelect" value="1.0"/>
@@ -49,6 +50,7 @@
             <Control type="ScriptComboBox" id="cmbSettingsAnalyzer" value="1.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsHostPlay" value="1.0"/>
             <Control type="ScriptButton" id="btnChangeSampleFolder" value="0.0"/>
+            <Control type="ScriptButton" id="btnKofi" value="0.0"/>
             <Control type="ScriptButton" id="btnGotIt" value="0.0"/>
           </Content>
           <UIData Source="tumultUIData"/>
