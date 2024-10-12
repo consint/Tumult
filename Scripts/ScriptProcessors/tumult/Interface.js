@@ -939,7 +939,7 @@ Content.getComponent("btnGotIt").setControlCallback(onbtnGotItControl);
 inline function onbtnLinkWebsiteControl(component, value)
 {
 	if (value)
-		Engine.openWebsite("https://www.cosint.net");
+		Engine.openWebsite("https://www.consint.net");
 };
 Content.getComponent("btnLinkWebsite").setControlCallback(onbtnLinkWebsiteControl);
 

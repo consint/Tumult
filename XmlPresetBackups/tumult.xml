@@ -10,7 +10,7 @@
           <ChildProcessors/>
           <Content>
             <Control type="ScriptButton" id="btnBypass" value="0.0"/>
-            <Control type="ScriptButton" id="btnSettings" value="1"/>
+            <Control type="ScriptButton" id="btnSettings" value="1.0"/>
             <Control type="ScriptButton" id="btnLogo" value="0.0"/>
             <Control type="ScriptSlider" id="knbNoiseGain" value="-10.0"/>
             <Control type="ScriptButton" id="btnSelectLeft" value="0.0"/>
@@ -27,12 +27,12 @@
             <Control type="ScriptSlider" id="knbFollowThresh" value="-19.99999809265137"/>
             <Control type="ScriptButton" id="btnEqHpWEnable" value="0.0"/>
             <Control type="ScriptSlider" id="knbEqHpFreq" value="39.0"/>
-            <Control type="ScriptSlider" id="knbEqHpQ" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEqHpQ" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak1Enable" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbFilter2Switch" value="1.0"/>
             <Control type="ScriptSlider" id="knbEQPeak1Freq" value="175.0"/>
             <Control type="ScriptSlider" id="knbEQPeak1Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak1Q" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEQPeak1Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak2Enable" value="0.0"/>
             <Control type="ScriptButton" id="btnEQPeak3Enable" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbFilter4Switch" value="1.0"/>
@@ -41,10 +41,10 @@
             <Control type="ScriptSlider" id="knbEQPeak2Freq" value="600.0"/>
             <Control type="ScriptSlider" id="knbEQPeak2Gain" value="0.0"/>
             <Control type="ScriptSlider" id="knbEQPeak3Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak2Q" value="0.00227481359615922"/>
-            <Control type="ScriptSlider" id="knbEQPeak3Q" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEQPeak2Q" value="0.00227481358148667"/>
+            <Control type="ScriptSlider" id="knbEQPeak3Q" value="0.00227481358148667"/>
             <Control type="ScriptSlider" id="knbEqLPFreq" value="8500.0"/>
-            <Control type="ScriptSlider" id="knbEqLPQ" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEqLPQ" value="0.00227481358148667"/>
             <Control type="ScriptSlider" id="knbEQHp1Gain" value="-0.558139979839325"/>
             <Control type="ScriptSlider" id="knbEQLp1Gain" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsAnalyzer" value="1.0"/>

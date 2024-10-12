@@ -24,7 +24,7 @@
              height="50.0" borderSize="0.0" borderRadius="0.0" itemColour="2500905"
              itemColour2="2500905" textColour="16777215" bgColour="16777215">
     <Component type="ScriptSlider" id="knbNoiseGain" x="20.0" y="10.0" text="master_Gain"
-               min="-35.0" max="35.0" width="30" height="30" itemColour="4280032541"
+               min="-35.0" max="35.0" width="30.0" height="30.0" itemColour="4280032541"
                itemColour2="4280690985" bgColour="4281941823" textColour="4293321691"
                parentComponent="pnlMaster" isPluginParameter="1" pluginParameterName="Gain"
                defaultValue="-10.0"/>
@@ -232,7 +232,7 @@
   </Component>
   <Component type="ScriptPanel" id="pnlSettings" x="2.0" y="55.0" width="486.0"
              height="470.0" borderSize="0.0" borderRadius="0.0" textColour="4293321691"
-             visible="0">
+             visible="0.0">
     <Component type="ScriptFloatingTile" id="ftSettings" x="28.0" y="115.0"
                width="440.0" height="180.0" ContentType="CustomSettings" bgColour="4280690985"
                itemColour="4280690985" itemColour2="4281941823" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: false,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    1.75,&#10;    2.0&#10;  ]&#10;}"
