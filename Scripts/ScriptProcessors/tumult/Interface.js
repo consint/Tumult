@@ -4,7 +4,7 @@ Tumult makes noise.
 Creator: Consistent Interruption
 License: GPLv3
 
-https://cosint.net
+https://www.consint.net
 https://github.com/consint/Tumult
 
 Created with Hise (https://hise.dev/) 
@@ -121,16 +121,16 @@ pnlBackground.setPaintRoutine(function(g)
 	g.fillRoundedRectangle([2, headerHight, a[2]-6, 480], 5);
 	
 	// Back Switch
-	g.setColour(Colours.withAlpha(pnlBackground.get("textColour"), 0.1));
-	g.fillEllipse([65, 135, 110, 110]);
+	g.setColour(Colours.withAlpha(pnlBackground.get("itemColour2"), 0.1));
+	g.fillEllipse([67, 137, 106, 106]);
 	
 	// Back Knobs
-	g.setColour(Colours.withAlpha(pnlBackground.get("textColour"), 0.15));
-	g.fillEllipse([17.5, 62.5, 35, 35]);
-	g.fillEllipse([407.5, 62.5, 35, 35]);
-	g.fillEllipse([232.5, 172.5, 55, 55]);
-	g.fillEllipse([302.5, 142.5, 55, 55]);
-	g.fillEllipse([372.5, 182.5, 55, 55]);
+	g.setColour(Colours.withAlpha(pnlBackground.get("itemColour2"), 0.1));
+	g.fillEllipse([18, 63, 34, 34]);
+	g.fillEllipse([408, 63, 34, 34]);
+	g.fillEllipse([233, 173, 54, 54]);
+	g.fillEllipse([303, 143, 54, 54]);
+	g.fillEllipse([373, 183, 54, 54]);
 
 	// Lines	
 	g.setColour(0xFF1E2222);
@@ -402,7 +402,6 @@ laf.registerFunction("drawRotarySlider", function(g, obj)
 		var indiDia = obj.area[2]/10;
 		g.rotate(endOffset, [obj.area[2] / 2, obj.area[2] / 2]);
 		g.fillEllipse([obj.area[2] / 2 - indiDia / 2, obj.area[2]/6.25, indiDia, indiDia]);
-
 	}
 });
 
@@ -1177,7 +1176,7 @@ inline function playNoise(value)
 		sntumult.setAttribute(sntumult.switch_noise, 2);
 		Synth.playNote(20+value, 124);
 	}
-	else if (value > 32 && value <= 50)
+	else if (value > 32 && value <= 50) // World
 	{
 		sntumult.setAttribute(sntumult.switch_noise, 2);
 		Synth.playNote(27+value, 124);

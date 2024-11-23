@@ -26,7 +26,7 @@
             <Control type="ScriptSlider" id="knbFollowAttac" value="0.0"/>
             <Control type="ScriptSlider" id="knbFollowThresh" value="-19.99999809265137"/>
             <Control type="ScriptButton" id="btnEqHpWEnable" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEqHpFreq" value="39.0"/>
+            <Control type="ScriptSlider" id="knbEqHpFreq" value="50.0"/>
             <Control type="ScriptSlider" id="knbEqHpQ" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak1Enable" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbFilter2Switch" value="1.0"/>
@@ -77,7 +77,7 @@
           </UIData>
         </Processor>
         <Processor Type="CurveEq" ID="ParaEQ1" Bypassed="1" NumFilters="5" Band0="-0.558139979839325"
-                   Band1="39.0" Band2="0.300000011920929" Band3="0.0" Band4="1.0"
+                   Band1="50.0" Band2="0.300000011920929" Band3="0.0" Band4="1.0"
                    Band5="0.0" Band6="175.0" Band7="0.300000011920929" Band8="0.0"
                    Band9="4.0" Band10="0.0" Band11="600.0" Band12="0.300000011920929"
                    Band13="0.0" Band14="4.0" Band15="0.0" Band16="2500.0" Band17="0.300000011920929"

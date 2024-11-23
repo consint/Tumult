@@ -30,7 +30,7 @@
                defaultValue="-10.0"/>
     <Component type="ScriptButton" id="btnSelectLeft" x="123.25" y="17.5" width="10.0"
                height="15.0" parentComponent="pnlMaster" isMomentary="1" itemColour2="4281481272"
-               textColour="4282204995" enabled="0"/>
+               textColour="4282204995" isMetaParameter="1" enabled="0"/>
     <Component type="ScriptComboBox" id="cmbSelect" x="140.0" y="12.5" max="50"
                items="Noise::White&#10;Noise::Pink&#10;Noise::Brown&#10;Noise::Velvet&#10;Noise::Crushed&#10;Vinyl::Vinyl 1&#10;Vinyl::Vinyl 2&#10;Vinyl::Vinyl 3&#10;Vinyl::Vinyl 4&#10;Vinyl::Vinyl 5&#10;Static::Electric 1&#10;Static::Electric 2&#10;Static::Film&#10;Static::Gramophone&#10;Static::Radio&#10;Static::TV&#10;Machine::Computer&#10;Machine::Dough&#10;Machine::Fridge 1&#10;Machine::Fridge 2&#10;Machine::Furnance&#10;Machine::Letters&#10;Machine::Oven&#10;Machine::Air 1&#10;Machine::Air 2&#10;Machine::Vending&#10;Machine::Washing&#10;Hum::Alien 1&#10;Hum::Alien 2&#10;Hum::Electric 1&#10;Hum::Electric 2&#10;Hum::VHS&#10;World::City 1&#10;World::City 2&#10;World::City 3&#10;World::Crowd&#10;World::Fire 1&#10;World::Fire 2&#10;World::Fire 3&#10;World::Fire 4&#10;World::Rain 1&#10;World::Rain 2&#10;World::Rain 3&#10;World::Rain 4&#10;World::Rain 5&#10;World::Underground&#10;World::Waterfall 1&#10;World::Waterfall 2&#10;World::Waterfall 3&#10;World::Waterfall 4"
                useCustomPopup="1" parentComponent="pnlMaster" bgColour="4280690985"
@@ -38,7 +38,7 @@
                height="25.0" textColour="4293321691" isPluginParameter="1" pluginParameterName="Noise Select"/>
     <Component type="ScriptButton" id="btnSelectRight" x="247.75" y="17.5" width="10.0"
                height="15.0" parentComponent="pnlMaster" isMomentary="1" itemColour2="4281481272"
-               textColour="4282204995"/>
+               textColour="4282204995" isMetaParameter="1"/>
     <Component type="ScriptPanel" id="pnlGainName" x="55.0" y="10.0" width="50.0"
                height="15.0" textColour="4293321691" parentComponent="pnlMaster"/>
     <Component type="ScriptPanel" id="pnlGainValue" x="55.0" y="23.0" parentComponent="pnlMaster"
@@ -103,7 +103,7 @@
                  max="500.0" parentComponent="pnlFollowBack" width="50.0" height="80.0"
                  bgColour="4281941823" textColour="4293321691" itemColour2="4280690985"
                  itemColour="3424394525" middlePosition="50.0" pluginParameterName="Follow Release"
-                 defaultValue="15.0"/>
+                 defaultValue="15.0" isPluginParameter="1"/>
       <Component type="ScriptSlider" id="knbFollowAttac" x="20.0" y="50.0" text="Attack"
                  processorId="Script FX1" parameterId="follow_attac" max="500.0"
                  parentComponent="pnlFollowBack" width="50.0" height="80.0" bgColour="4281941823"
