@@ -1,5 +1,5 @@
 # Tumult
-Tumult makes noise. Tumult texturizes, accentuates and adds warmth and age. Tumult comes with 50 hand-picked noises. You can play them raw, let them follow your sounds, or duck them away. It comes with an 5-band EQ that lets you shape the noises to your liking. Tumult is a free and open source 64bit VST3 effect plugin for Linux and Windows.
+Tumult makes noise. Tumult texturizes, accentuates and adds warmth and age. Tumult comes with 50 hand-picked noises. You can play them raw, let them follow your sounds, or duck them away. Tumult comes with an 5-band EQ that lets you shape the noises to your liking. Tumult is a free and open source 64bit VST3 effect plugin for Linux and Windows.
 
 Download the latest version here: https://github.com/consint/Tumult/releases/
 
@@ -75,10 +75,7 @@ The sample folder can be selected here.
 5. Go to ‘Export’ and select ‘Compile DSP Networks as dll’. On Windows this will compile the DSP Networks. On Linux you have to execute the file ‘.../Tumult/DspNetworks/Binaries/batchCompileLinux.sh’ in the terminal.
 6. Restart Hise and load the file ‘tumult.xml’.
 7. Select ‘Export -> Export as FX plugin’. 
-8. 
-9. WINDOWS COMPILATION. 
-10. 
-11. On Linux you have to execute the file ‘.../Tumult/Binaries/batchCompileLinux.sh’ in the terminal.
+8. On Windows this will compile the Plugin. On Linux you have to execute the file ‘.../Tumult/Binaries/batchCompileLinux.sh’ in the terminal.
 
 If you need help you can ask me or have a look at the great [Hise forum](https://forum.hise.audio/).
 
