@@ -175,69 +175,69 @@
           SampleStart="2604" LoopXFade="0" LoopStart="3141" LoopEnd="254674"
           SampleEnd="256615" LoopEnabled="1"/>
   <sample Root="63" LoKey="63" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/crowd_large_crowd_medium_distance_stereo.wav"
+          FileName="{PROJECT_FOLDER}world/crowd_large_crowd_medium_distance_stereo.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="7.065114498138428"
           SampleStart="27134" LoopXFade="1138" LoopStart="28272" LoopEnd="509508"
           SampleEnd="509519" LoopEnabled="1"/>
   <sample Root="64" LoKey="64" HiKey="64" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire1_ambiance_campfire_loop_stereo.wav"
+          FileName="{PROJECT_FOLDER}world/fire1_ambiance_campfire_loop_stereo.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="2.165103673934937"
           LoopStart="8726" LoopEnabled="1" LoopEnd="605773"/>
   <sample Root="65" LoKey="65" HiKey="65" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire2.wav"
+          FileName="{PROJECT_FOLDER}world/fire2.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="1.231139183044434"
           LoopStart="14397" LoopEnabled="1" LoopEnd="563364"/>
   <sample Root="66" LoKey="66" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire3_campfire-01.wav"
+          FileName="{PROJECT_FOLDER}world/fire3_campfire-01.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="11.9069766998291"
           LoopStart="3285" LoopEnabled="1" LoopEnd="477316"/>
   <sample Root="67" LoKey="67" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/fire4_campfire.wav"
+          FileName="{PROJECT_FOLDER}world/fire4_campfire.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="6.605119705200195"
           LoopEnabled="1" LoopStart="204582" LoopEnd="479948" LoopXFade="0"
           SampleStart="199418"/>
   <sample Root="68" LoKey="68" HiKey="68" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain1_field_la-rain_park_under-stone-bridge_02.wav"
+          FileName="{PROJECT_FOLDER}world/rain1_field_la-rain_park_under-stone-bridge_02.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="15.79180717468262"
           LoopEnabled="1" LoopStart="7674" LoopEnd="505305"/>
   <sample Root="69" LoKey="69" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain2_forest-cabin-summer-rain-5.wav"
+          FileName="{PROJECT_FOLDER}world/rain2_forest-cabin-summer-rain-5.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="42.95000457763672"
           LoopXFade="0" LoopStart="102527" SampleStart="100635" LoopEnabled="1"
           LoopEnd="474506"/>
   <sample Root="70" LoKey="70" HiKey="70" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain3_rain-and-thunder-in-the-countryside.wav"
+          FileName="{PROJECT_FOLDER}world/rain3_rain-and-thunder-in-the-countryside.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="11.69815731048584"
           LoopStart="0" LoopEnabled="1" LoopEnd="214454"/>
   <sample Root="71" LoKey="71" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain4_rain-in-the-midnight-city.wav"
+          FileName="{PROJECT_FOLDER}world/rain4_rain-in-the-midnight-city.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="10.02323722839355"
           LoopStart="5776" LoopEnabled="1" LoopEnd="517353" SampleStart="0"
           LoopXFade="0"/>
   <sample Root="72" LoKey="72" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/rain5_rain-thunder-and-traffic.wav"
+          FileName="{PROJECT_FOLDER}world/rain5_rain-thunder-and-traffic.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="44.27827453613281"
           LoopStart="8260" LoopEnabled="1" LoopEnd="462753"/>
   <sample Root="73" LoKey="73" HiKey="73" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/underground_large-underground-metro-station-heavy-ventilation-and-distant-echo-voices.wav"
+          FileName="{PROJECT_FOLDER}world/underground_large-underground-metro-station-heavy-ventilation-and-distant-echo-voices.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="5.971113204956055"
           LoopEnabled="1" LoopStart="4337" LoopEnd="540274" LoopXFade="151"/>
   <sample Root="74" LoKey="74" HiKey="74" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall1_hidden-waterfall.wav"
+          FileName="{PROJECT_FOLDER}world/waterfall1_hidden-waterfall.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="8.204988479614258"
           LoopStart="50581" LoopEnabled="1" LoopEnd="486219" SampleStart="43947"
           LoopXFade="0"/>
   <sample Root="75" LoKey="75" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall2_krka_waterfall2_f_4824.wav"
+          FileName="{PROJECT_FOLDER}world/waterfall2_krka_waterfall2_f_4824.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="6.603414535522461"
           LoopEnabled="1" LoopStart="3841" LoopEnd="507071"/>
   <sample Root="76" LoKey="76" HiKey="76" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall3_turbulent-river-waterfall.wav"
+          FileName="{PROJECT_FOLDER}world/waterfall3_turbulent-river-waterfall.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="1.56901752948761"
           LoopEnabled="1" LoopStart="48359" LoopEnd="485657" SampleEnd="492941"
           SampleStart="39435" LoopXFade="0"/>
   <sample Root="77" LoKey="77" HiKey="77" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="/home/buerdman/Musik Produktion/samples/calf/World/cut/waterfall4_sound.wav"
+          FileName="{PROJECT_FOLDER}world/waterfall4_sound.wav"
           Duplicate="1" Normalized="1" NormalizedPeak="1.00000011920929"
           LoopEnabled="1" LoopStart="13153" LoopEnd="518446"/>
 </samplemap>
