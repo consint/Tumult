@@ -2,7 +2,7 @@
 
 <ProjectSettings>
   <Name value="Tumult"/>
-  <Version value="1.0.0"/>
+  <Version value="1.0.1"/>
   <Description value=""/>
   <BundleIdentifier value="com.consistentInterruption.tumult"/>
   <PluginCode value="Tult"/>

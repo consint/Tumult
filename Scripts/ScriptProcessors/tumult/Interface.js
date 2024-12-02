@@ -708,7 +708,7 @@ pnlAbout.setPaintRoutine(function(g)
 	g.drawAlignedText("Consistent Interruption", [0, 35, a[2], 20], "centred");
 	
 	g.setFont("Roboto-Medium", 12);
-	g.drawAlignedText("Version 1.0.0", [0, 55, a[2], 20], "centred");
+	g.drawAlignedText("Version " + Engine.getVersion(), [0, 55, a[2], 20], "centred");
 });
 
 // EQ Back
