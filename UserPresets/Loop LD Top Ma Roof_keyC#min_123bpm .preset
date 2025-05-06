@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.0.1">
+  <CustomJSON file="/home/buerdman/Musik Produktion/samples/landr/Loco Dice_Luv Pack/Loop/Multi-Instrumental/Loop LD Top Ma Roof_keyC#min_123bpm .wav"
+              fade="0" gain="1.008639886731181" startX="0" endX="436"/>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Preset>

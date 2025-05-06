@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.1.0">
+  <CustomJSON file="/home/buerdman/Musik Produktion/samples/Make Noise Strega Drones &amp; Abstract Sound Effects/Drones/DRONE07.wav"
+              fade="0.2000000029802322" gain="0.000781917212959583" startX="165"
+              endX="254"/>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Preset>
