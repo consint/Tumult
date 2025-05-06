@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<Preset Version="1.0.1">
-  <CustomJSON file="/home/buerdman/ardour/7.1/export/baklead1.wav" fade="0"
-              gain="0" startX="0" endX="436"/>
-  <MidiAutomation/>
-  <MPEData Enabled="0"/>
-</Preset>

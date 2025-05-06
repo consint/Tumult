@@ -12,17 +12,15 @@ Created with Hise (https://hise.dev/)
 
 Content.makeFrontInterface(490, 532);
 
+include("icons.js");
+
 Engine.loadFontAs("{PROJECT_FOLDER}Fonts/Roboto-Medium.ttf", "Roboto-Medium");
 Engine.setGlobalFont("Roboto-Medium");
 
-// Includes
-include("icons.js");
-include("loadCustomSample.js");
-
-const var NUMBER_NOISES = 100;
-const var NUMBER_SAMPLES = 95;
-const var SAMPLE_SIZE = 266685530;
-const var SAMPLE_CATEGORIES = ["hum", "machine", "static", "vinyl", "world", "noiseplethora"];
+const var NUMBER_NOISES = 50;
+const var NUMBER_SAMPLES = 45;
+const var SAMPLE_SIZE = 111739330;
+const var SAMPLE_CATEGORIES = ["hum", "machine", "static", "vinyl", "world"];
 
 // ##############
 // Sample Check
@@ -280,10 +278,6 @@ laf.registerFunction("drawToggleButton", function(g, obj)
 	{
 		g.drawPath(settings, a, 1);
 	}
-	else if (obj.text == "Add")
-	{
-		g.fillPath(add, a);
-	}
 	else if (obj.text == "EQ")
 	{
 		g.setFont("Roboto-Medium", 15);
@@ -295,43 +289,20 @@ laf.registerFunction("drawToggleButton", function(g, obj)
 		obj.over == 1 ? g.setColour(0xffffffff) : g.setColour(obj.textColour);
 		g.drawAlignedText(obj.text, a, "centred");
 	}
+	else if (obj.text == "Change Sample Folder Location" || (obj.text == "Got it"))
+	{
+		obj.over == 1 ? g.setColour(obj.itemColour1) : g.setColour(obj.bgColour);
+		g.fillRoundedRectangle(a, 3);
+		
+		g.setFont("Roboto-Medium", 14);
+		g.setColour(obj.textColour);
+		g.drawAlignedText(obj.text, a, "centred");
+	}
 	else
 	{
 		g.setFont("Roboto-Medium", 13);
 		g.drawAlignedText(obj.text, obj.area, "centred");
 	}
-});
-
-// Buttons light
-const var lafBtnLight = Content.createLocalLookAndFeel();
-const var btnChangeSampleFolder = Content.getComponent("btnChangeSampleFolder");
-const var btnGotIt = Content.getComponent("btnGotIt");
-const var btnDeleteYes = Content.getComponent("btnDeleteYes");
-const var btnDeleteNo = Content.getComponent("btnDeleteNo");
-const var btnExistsYes = Content.getComponent("btnExistsYes");
-const var btnExistsNo = Content.getComponent("btnExistsNo");
-
-btnChangeSampleFolder.setLocalLookAndFeel(lafBtnLight);
-btnGotIt.setLocalLookAndFeel(lafBtnLight);
-btnDeleteYes.setLocalLookAndFeel(lafBtnLight);
-btnDeleteNo.setLocalLookAndFeel(lafBtnLight);
-btnExistsYes.setLocalLookAndFeel(lafBtnLight);
-btnExistsNo.setLocalLookAndFeel(lafBtnLight);
-btnFImportYes.setLocalLookAndFeel(lafBtnLight);
-btnFImportCancel.setLocalLookAndFeel(lafBtnLight);
-btnFImportSelect.setLocalLookAndFeel(lafBtnLight);
-
-lafBtnLight.registerFunction("drawToggleButton", function(g, obj)
-{
-	var a = obj.area;
-	var alpha = (obj.enabled == 1) ? 1 : 0.3;
-	
-	obj.over == 1 ? g.setColour(Colours.withAlpha(obj.itemColour1, alpha)) : g.setColour(Colours.withAlpha(obj.bgColour, alpha));
-	g.fillRoundedRectangle(a, 3);
-	
-	g.setFont("Roboto-Medium", 14);
-	g.setColour(Colours.withAlpha(obj.textColour, alpha));
-	g.drawAlignedText(obj.text, a, "centred");
 });
 
 // Knobs
@@ -353,8 +324,8 @@ laf.registerFunction("drawRotarySlider", function(g, obj)
 	}
 	else
 	{
-		backColour = Colours.withAlpha(obj.bgColour, 0.3);
-		txtColour = Colours.withAlpha(obj.textColour, 0.3);
+		backColour = Colours.withAlpha (obj.bgColour, 0.3);
+		txtColour = Colours.withAlpha (obj.textColour, 0.3);
 	}
 	
 	if (obj.text.contains("eq_Freq"))
@@ -408,7 +379,7 @@ laf.registerFunction("drawRotarySlider", function(g, obj)
 			var yShift = 14.5;
 			g.drawAlignedText(Engine.doubleToString(obj.value, 2), [obj.area[0], obj.area[2] + yShift, obj.area[2], 10], "centred");
 		}
-		if (obj.text.contains("Gain"))
+		if (obj.text == "master_Gain")
 		{
 			startOffset = 0;
 			endOffset = (2.5 * obj.value) / obj.max;
@@ -429,7 +400,7 @@ laf.registerFunction("drawRotarySlider", function(g, obj)
 		
 		// Indicator
 		var indiDia = obj.area[2]/10;
-		g.rotate(endOffset, [obj.area[2] * 0.5, obj.area[2] * 0.5]);
+		g.rotate(endOffset, [obj.area[2] / 2, obj.area[2] / 2]);
 		g.fillEllipse([obj.area[2] / 2 - indiDia / 2, obj.area[2]/6.25, indiDia, indiDia]);
 	}
 });
@@ -513,7 +484,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
 	var a = obj.area;
 
     g.setGradientFill([obj.itemColour2, 49, 0, obj.bgColour, 51, a[3]]);
-    g.fillRoundedRectangle(a, 3);
+    g.fillRoundedRectangle(obj.area, 3);
 	
     g.setColour(obj.textColour);
     g.setFont("Roboto-Medium", 13);
@@ -597,7 +568,7 @@ lafCmbFilter.registerFunction("getIdealPopupMenuItemSize", function(obj)
 });
 
 
-// Settings
+// Serttings
 const var pnlSettings = Content.getComponent("pnlSettings");
 const var pnlSettingsFFT = Content.getComponent("pnlSettingsFFT");
 const var pnlSettingsHostPlay = Content.getComponent("pnlSettingsHostPlay");
@@ -644,7 +615,7 @@ pnlSettings.setPaintRoutine(function(g)
 	
 	// Settings Border
 	g.setColour(pnlBackground.get("textColour"));
-	g.drawRoundedRectangle([25, 25, a[2]-50, 280], 3, 1);
+	g.drawRoundedRectangle([25, 25, a[2]-50, 280], 8, 1);
 	
 	// Header Settings
 	g.setColour(pnlBackground.get("itemColour"));
@@ -719,7 +690,7 @@ pnlMsgReload.setPaintRoutine(function(g)
 	
 	// Text
 	g.setFont("Roboto-Medium", 15);
-	g.drawMultiLineText(this.get("text"), [130, 205], 280, "centred", 5);
+	g.drawMultiLineText("In order for the settings to take effect, the plugin must be removed and reloaded.", [130, 203], 280, "centred", 5);
 });
 
 // About
@@ -740,7 +711,6 @@ pnlAbout.setPaintRoutine(function(g)
 	g.drawAlignedText("Version " + Engine.getVersion(), [0, 55, a[2], 20], "centred");
 });
 
-
 // EQ Back
 const var pnlFFTBack = Content.getComponent("pnlFFTBack");
 
@@ -751,7 +721,7 @@ pnlFFTBack.setPaintRoutine(function(g)
 	
 	// Drag
 	g.setGradientFill([pnlFFTBack.get("itemColour"), 0, 10, pnlFFTBack.get("itemColour2"), 0, hightEQDisplay-10]);
-	g.fillRoundedRectangle([0, 0, a[2], hightEQDisplay], 3);
+	g.fillRoundedRectangle([0, 0, a[2], hightEQDisplay], 5);
 	g.fillRect([0, 10, a[2], hightEQDisplay-10]);
 	
 	// Knobs
@@ -774,7 +744,7 @@ pnlFFTBack.setPaintRoutine(function(g)
 	
 	// border
 	g.setColour(pnlFFTBack.get("itemColour"));
-	g.drawRoundedRectangle([1, 1, a[2]-2, 188], 3, 2);
+	g.drawRoundedRectangle([1, 1, a[2]-2, 188], 5, 2);
 });
 
 // EQ drag
@@ -875,56 +845,28 @@ pnlFFT.setPaintRoutine(function(g)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ##############
 // GUI Logic
 // ##############
 
 // Bypass
-reg dawBypass = false;
+const var cmbSelect = Content.getComponent("cmbSelect");
 
 inline function onbtnBypassControl(component, value)
 {
-	if (dawBypass)
-		return;
-
-	sntumult.setBypassed(1-value);
+	sntumult.setBypassed(value);
 	cmbSelect.changed();
 };
 Content.getComponent("btnBypass").setControlCallback(onbtnBypassControl);
 
-// btnSettings
-const var btnAdd = Content.getComponent("btnAdd");
-reg tmpCmbSelectValue = 1;
-
+// Settings
 inline function onbtnSettingsControl(component, value)
 {
-	pnlSettings.set("visible", value);
-	
-	if (!value)
-		return;
-	
-	tmpCmbSelectValue = cmbSelect.getValue();
-	btnAdd.setValue(0);
-	btnAdd.changed();
+	pnlSettings.set("visible", 1-value);
 };
 Content.getComponent("btnSettings").setControlCallback(onbtnSettingsControl);
 
-// btnLogo>
+// btnLogo
 const var btnSettings = Content.getComponent("btnSettings");
 inline function onbtnLogoControl(component, value)
 {
@@ -944,40 +886,6 @@ inline function onbtnLogoControl(component, value)
 };
 Content.getComponent("btnLogo").setControlCallback(onbtnLogoControl);
 
-// btnAdd
-inline function onbtnAddControl(component, value)
-{
-	pnlCustomSamples.set("visible", value);
-	
-	if (value)
-	{
-		// Clear the Sample Editor
-		sntumult.setAttribute(sntumult.switch_noise, 0);
-		clearSample();
-		clearFolderImport();
-		getSetPresetList();
-
-		// hide pnlSettings
-		btnSettings.setValue(0);
-		btnSettings.changed();
-		
-		// enable Player in scriptnode
-		sntumult.setAttribute(sntumult.switch_noise, 3);
-		
-		// set Switch to neutral
-		sntumult.setAttribute(sntumult.switch_branch, 2);
-		
-		tmpCmbSelectValue = cmbSelect.getValue();
-	}
-	else
-	{
-		setNoiseSelectItems();
-		cmbSelect.setValue(tmpCmbSelectValue);
-		cmbSelect.changed();
-		knbSwitch.changed();
-	}
-};
-Content.getComponent("btnAdd").setControlCallback(onbtnAddControl);
 
 const var gc = Engine.getGlobalRoutingManager();
 const gcSetFFT = gc.getCable("gcSetFFT");
@@ -999,13 +907,6 @@ inline function oncmbSettingsAnalyzerControl(component, value)
 };
 Content.getComponent("cmbSettingsAnalyzer").setControlCallback(oncmbSettingsAnalyzerControl);
 
-//
-inline function showMessage(message)
-{
-	pnlMsgReload.set("text", message);
-	pnlMsgReload.set("visible", 1);
-}
-
 // Change Sample Folder Location
 inline function onbtnChangeSampleFolderControl(component, value)
 {
@@ -1019,7 +920,7 @@ inline function onbtnChangeSampleFolderControl(component, value)
 	    	Settings.setSampleFolder(result);
 	    	pnlSampleFolderLocation.set("text", result.toString(0));
 	    	pnlSampleFolderLocation.repaint();
-	    	showMessage("In order for the settings to take effect, the plugin must be removed and reloaded.");
+	    	pnlMsgReload.set("visible", 1);
     	}
 	});
 };
@@ -1149,28 +1050,6 @@ th.setOnTransportChange(false, function(value)
     }
 });
 
-const var btnBypass = Content.getComponent("btnBypass");
-
-th.setOnBypass(function(value)
-{
-	if (dawBypass == value)
-		return;
-
-	if (value)
-	{
-		btnBypass.setValue(0);
-		btnBypass.set("enabled", 0);
-	}
-	else
-	{
-		btnBypass.setValue(1);
-		btnBypass.set("enabled", 1);
-	}
-	
-	dawBypass = value;
-	btnBypass.changed();
-});
-
 // Knob Switch
 const var sntumult = Synth.getEffect("Script FX1");
 const var pnlDuckBack = Content.getComponent("pnlDuckBack");
@@ -1270,43 +1149,46 @@ const var btnSelectRight = Content.getComponent("btnSelectRight");
 const var btnSelectLeft = Content.getComponent("btnSelectLeft");
 const var cmbSettingsHostPlay = Content.getComponent("cmbSettingsHostPlay");
 
-const var sampleMap = Synth.getAudioSampleProcessor("Script FX1").getAudioFile(1);
-
 inline function playNoise(value)
 {
-	if (value <= 5) // Noises
+	if (value <= 5) // Nioises
 	{
 		sntumult.setAttribute(sntumult.switch_noise, 1);
 		sntumult.setAttribute(sntumult.noise, value-1);
 	}
-	else if (value > 5 && value <= 50) // sampled_noises
+	else if (value > 5 && value <= 10) // Vinyl
 	{
-		sampleMap.loadFile("{XYZ::SampleMap}" + "sampled_noises");
 		sntumult.setAttribute(sntumult.switch_noise, 2);
-		Synth.playNote(value-6, 124);
+		Synth.playNote(6+value, 124);
 	}
-	else if (value > 50 && value <= 100) // noise_plethora
+	else if (value > 10 && value <= 16) // Static
 	{
-		sampleMap.loadFile("{XYZ::SampleMap}" + "noise_plethora");
 		sntumult.setAttribute(sntumult.switch_noise, 2);
-		Synth.playNote(value -51, 124);
+		Synth.playNote(13+value, 124);
 	}
-	else if (value > 100) // Custom Noises
+	else if (value > 16 && value <= 27) // Machine
 	{
-		sntumult.setAttribute(sntumult.switch_noise, 3);
-		customLoad(cmbSelect.getItemText());
+		sntumult.setAttribute(sntumult.switch_noise, 2);
+		Synth.playNote(19+value, 124);
+	}
+	else if (value > 27 && value <= 32) // Hum
+	{
+		sntumult.setAttribute(sntumult.switch_noise, 2);
+		Synth.playNote(20+value, 124);
+	}
+	else if (value > 32 && value <= 50) // World
+	{
+		sntumult.setAttribute(sntumult.switch_noise, 2);
+		Synth.playNote(27+value, 124);
 	}
 }
 
 inline function oncmbSelectControl(component, value)
 {
 	value == 1 ? btnSelectLeft.set("enabled", 0) : btnSelectLeft.set("enabled", 1);
-	value == NUMBER_NOISES + numberCustomNoises ? btnSelectRight.set("enabled", 0) : btnSelectRight.set("enabled", 1);
+	value == NUMBER_NOISES ? btnSelectRight.set("enabled", 0) : btnSelectRight.set("enabled", 1);
 	
 	// Host Sync
-	if (pnlCustomSamples.get("visible") == 1)
-		return;
-	
 	if (cmbSettingsHostPlay.getValue() == 1)
 	{
 		if (isPlaying == 1)
@@ -1327,9 +1209,6 @@ inline function oncmbSettingsHostPlayControl(component, value)
 	cmbSelect.changed();
 };
 Content.getComponent("cmbSettingsHostPlay").setControlCallback(oncmbSettingsHostPlayControl);
-
-
-
 
 
 // EQ

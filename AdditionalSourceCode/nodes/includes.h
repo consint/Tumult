@@ -9,7 +9,6 @@
 
 // Include third party header files ----------------
 
-#include "loopfadeplayer.h"
 #include "svf_lp.h"
 #include "svf_hs.h"
 #include "svf_ls.h"

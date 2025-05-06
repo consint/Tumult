@@ -27,13 +27,12 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations ----------------------------------------------------------------------
 		
-		registerPolyNode<project::svf_peak<1>, scriptnode::wrap::illegal_poly<project::svf_peak<1>>>();
-		registerPolyNode<project::svf_hp<1>, scriptnode::wrap::illegal_poly<project::svf_hp<1>>>();
-		registerPolyNode<project::noise<1>, scriptnode::wrap::illegal_poly<project::noise<1>>>();
-		registerPolyNode<project::svf_ls<1>, scriptnode::wrap::illegal_poly<project::svf_ls<1>>>();
-		registerPolyNode<project::svf_hs<1>, scriptnode::wrap::illegal_poly<project::svf_hs<1>>>();
-		registerPolyNode<project::svf_lp<1>, scriptnode::wrap::illegal_poly<project::svf_lp<1>>>();
-		registerPolyNode<project::loopfadeplayer<1>, project::loopfadeplayer<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::svf_peak<1>, wrap::illegal_poly<project::svf_peak<1>>>();
+		registerPolyNode<project::svf_hp<1>, wrap::illegal_poly<project::svf_hp<1>>>();
+		registerPolyNode<project::noise<1>, wrap::illegal_poly<project::noise<1>>>();
+		registerPolyNode<project::svf_ls<1>, wrap::illegal_poly<project::svf_ls<1>>>();
+		registerPolyNode<project::svf_hs<1>, wrap::illegal_poly<project::svf_hs<1>>>();
+		registerPolyNode<project::svf_lp<1>, wrap::illegal_poly<project::svf_lp<1>>>();
 		registerPolyNode<project::hardsoftclipper<1>, wrap::illegal_poly<project::hardsoftclipper<1>>>();
 		registerDataNode<project::sntumult_networkdata>();
 	}

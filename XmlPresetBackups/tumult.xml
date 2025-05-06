@@ -6,12 +6,18 @@
   <ChildProcessors>
     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
       <ChildProcessors>
-        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0" NumAudioFiles="1">
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
           <ChildProcessors/>
           <Content>
+            <Control type="ScriptButton" id="btnBypass" value="0.0"/>
+            <Control type="ScriptButton" id="btnSettings" value="1.0"/>
+            <Control type="ScriptButton" id="btnLogo" value="0.0"/>
             <Control type="ScriptSlider" id="knbNoiseGain" value="-10.0"/>
+            <Control type="ScriptButton" id="btnSelectLeft" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbSelect" value="1.0"/>
+            <Control type="ScriptButton" id="btnSelectRight" value="0.0"/>
             <Control type="ScriptSlider" id="knbMix" value="0.5"/>
+            <Control type="ScriptSlider" id="knbMix1" value="0.5"/>
             <Control type="ScriptSlider" id="knbSwitch" value="0.0"/>
             <Control type="ScriptSlider" id="knbDuckRelease" value="15.0"/>
             <Control type="ScriptSlider" id="knbDuckAttac" value="0.0"/>
@@ -28,26 +34,24 @@
             <Control type="ScriptSlider" id="knbEQPeak1Gain" value="0.0"/>
             <Control type="ScriptSlider" id="knbEQPeak1Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak2Enable" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak2Freq" value="600.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak2Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak2Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak3Enable" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbFilter4Switch" value="1.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak3req" value="2500.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak3Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak3Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQLPEnable" value="0.0"/>
+            <Control type="ScriptSlider" id="knbEQPeak3req" value="2500.0"/>
+            <Control type="ScriptSlider" id="knbEQPeak2Freq" value="600.0"/>
+            <Control type="ScriptSlider" id="knbEQPeak2Gain" value="0.0"/>
+            <Control type="ScriptSlider" id="knbEQPeak3Gain" value="0.0"/>
+            <Control type="ScriptSlider" id="knbEQPeak2Q" value="0.00227481358148667"/>
+            <Control type="ScriptSlider" id="knbEQPeak3Q" value="0.00227481358148667"/>
             <Control type="ScriptSlider" id="knbEqLPFreq" value="8500.0"/>
             <Control type="ScriptSlider" id="knbEqLPQ" value="0.00227481358148667"/>
+            <Control type="ScriptSlider" id="knbEQHp1Gain" value="-0.558139979839325"/>
+            <Control type="ScriptSlider" id="knbEQLp1Gain" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsAnalyzer" value="1.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsHostPlay" value="1.0"/>
-            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data=""
-                     rangeStart="0" rangeEnd="0"/>
-            <Control type="ScriptSlider" id="knbPlayerFade" value="0"/>
-            <Control type="ScriptSlider" id="knbPlayerGain" value="0"/>
-            <Control type="ScriptSlider" id="knbFolderFade" value="0.01"/>
-            <Control type="ScriptSlider" id="knbFolderGain" value="0"/>
-            <Control type="ScriptButton" id="btnFolderNormalise" value="0"/>
+            <Control type="ScriptButton" id="btnChangeSampleFolder" value="0.0"/>
+            <Control type="ScriptButton" id="btnKofi" value="0.0"/>
+            <Control type="ScriptButton" id="btnGotIt" value="0.0"/>
           </Content>
           <UIData Source="tumultUIData"/>
         </Processor>
@@ -61,8 +65,7 @@
     </Processor>
     <Processor Type="EffectChain" ID="FX" Bypassed="0">
       <ChildProcessors>
-        <Processor Type="ScriptFX" ID="Script FX1" Bypassed="1" NumAudioFiles="2"
-                   NumDisplayBuffers="3">
+        <Processor Type="ScriptFX" ID="Script FX1" Bypassed="0" NumDisplayBuffers="3">
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
           <Content/>
@@ -73,13 +76,13 @@
             <ContentProperties DeviceType="Desktop"/>
           </UIData>
         </Processor>
-        <Processor Type="CurveEq" ID="ParaEQ1" Bypassed="1" NumFilters="5" Band0="0.558139979839325"
+        <Processor Type="CurveEq" ID="ParaEQ1" Bypassed="1" NumFilters="5" Band0="-0.558139979839325"
                    Band1="50.0" Band2="0.300000011920929" Band3="0.0" Band4="1.0"
                    Band5="0.0" Band6="175.0" Band7="0.300000011920929" Band8="0.0"
                    Band9="4.0" Band10="0.0" Band11="600.0" Band12="0.300000011920929"
                    Band13="0.0" Band14="4.0" Band15="0.0" Band16="2500.0" Band17="0.300000011920929"
-                   Band18="0.0" Band19="4.0" Band20="-0.558139979839325" Band21="8500.0"
-                   Band22="0.300000011920929" Band23="0.0" Band24="0.0" FFTEnabled="0">
+                   Band18="0.0" Band19="4.0" Band20="0.0" Band21="8500.0" Band22="0.300000011920929"
+                   Band23="0.0" Band24="0.0" FFTEnabled="0">
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>

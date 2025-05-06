@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<Preset Version="1.0.1">
-  <CustomJSON file="/home/buerdman/Musik Produktion/samples/Felix Fleer DFAM Sample Pack/Loops/DFAM_21.wav"
-              fade="0.0" gain="0.0007819172129595832" startX="0" endX="436"/>
-  <MidiAutomation/>
-  <MPEData Enabled="0"/>
-</Preset>

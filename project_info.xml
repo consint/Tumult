@@ -2,7 +2,7 @@
 
 <ProjectSettings>
   <Name value="Tumult"/>
-  <Version value="1.1.0"/>
+  <Version value="1.0.1"/>
   <Description value=""/>
   <BundleIdentifier value="com.consistentInterruption.tumult"/>
   <PluginCode value="Tult"/>
@@ -12,10 +12,10 @@
   <AdditionalDspLibraries value=""/>
   <OSXStaticLibs value=""/>
   <WindowsStaticLibFolder value=""/>
-  <ExtraDefinitionsWindows value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1&#10;CONFIRM_PRESET_OVERWRITE=0&#10;HISE_USE_SVF_FOR_CURVE_EQ=1"/>
-  <ExtraDefinitionsOSX value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1&#10;CONFIRM_PRESET_OVERWRITE=0&#10;HISE_USE_SVF_FOR_CURVE_EQ=1"/>
-  <ExtraDefinitionsIOS value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1&#10;CONFIRM_PRESET_OVERWRITE=0&#10;HISE_USE_SVF_FOR_CURVE_EQ=1"/>
-  <ExtraDefinitionsLinux value="JUCE_DISABLE_NATIVE_FILECHOOSERS=1&#10;CONFIRM_PRESET_OVERWRITE=0&#10;HISE_USE_SVF_FOR_CURVE_EQ=1"/>
+  <ExtraDefinitionsWindows value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1"/>
+  <ExtraDefinitionsOSX value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1"/>
+  <ExtraDefinitionsIOS value="HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=1"/>
+  <ExtraDefinitionsLinux value="JUCE_DISABLE_NATIVE_FILECHOOSERS=1"/>
   <AppGroupID value=""/>
   <RedirectSampleFolder value=""/>
   <AAXCategoryFX value="AAX_EPlugInCategory_Effect"/>
@@ -32,8 +32,8 @@
   <ReadOnlyFactoryPresets value="No"/>
   <ForceStereoOutput value="No"/>
   <AdminPermissions value="No"/>
-  <EmbedUserPresets value="0"/>
-  <OverwriteOldUserPresets value="1"/>
+  <EmbedUserPresets value="Yes"/>
+  <OverwriteOldUserPresets value="No"/>
   <EnableGlobalPreprocessor value="No"/>
   <UseGlobalAppDataFolderWindows value="No"/>
   <UseGlobalAppDataFolderMacOS value="No"/>
@@ -42,5 +42,4 @@
   <CompileWithDebugSymbols value="No"/>
   <IncludeLorisInFrontend value="No"/>
   <ExtraDefinitionsNetworkDll value=""/>
-  <ProjectType value="FX plugin"/>
 </ProjectSettings>
