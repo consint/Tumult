@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<Preset Version="1.0.1">
-  <CustomJSON file="/home/buerdman/Musik Produktion/samples/free to use sounds/freetousesounds - Gondola Sounds - Ski Lift Sound Library - 10 Gondola, Lift, Pass By LR, Entrance &amp; Leaving Station, Lift Rumble, Metallic Squeaking, Up &amp; Down, Ticket Counter.wav"
-              fade="0" gain="0" startX="0" endX="436"/>
-  <MidiAutomation/>
-  <MPEData Enabled="0"/>
-</Preset>
