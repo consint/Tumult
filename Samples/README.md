@@ -1,6 +1,6 @@
-All samples are from [freesound.org](https://freesound.org/) and are licensed under a ‘Creative Commons 0’ licence. My thanks go to all the producers who created and provided these samples.
+All samples from categories Vinyl, Static, Machine, Hum and World are from [freesound.org](https://freesound.org/) and are licensed under a ‘Creative Commons 0’ licence. My thanks go to all the producers who created and provided these samples. You can find all links to the original samples down below (as of September 2024).
 
-You can find all links to the original samples here (as of September 2024):
+All samples from category Noise Plethora are recordings from the Eurorack module of the same name by [Befaco](https://www.befaco.org/noise-plethora/). They are published under a ‘Creative Commons 0’ licence on [freesound.org](https://freesound.org/).de and can be downloaded here: https://freesound.org/people/consint/
 
 #### Vinyl
 * Vinyl 1: https://freesound.org/s/699693/
