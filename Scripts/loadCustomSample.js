@@ -746,6 +746,7 @@ inline function clearSample()
 	pnlFileInfo.data.path = undefined;
 	pnlFileInfo.repaint();
 	
+	setRange();
 	pnlLoop.repaint();
 	cmbPresetList.setValue(0);
 }
