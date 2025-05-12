@@ -42,12 +42,12 @@
             <Control type="ScriptComboBox" id="cmbSettingsAnalyzer" value="1.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsHostPlay" value="1.0"/>
             <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="{SAMPLE_FOLDER}world/fire2.wav"
-                     rangeStart="0" rangeEnd="576000"/>
+                     rangeStart="0" rangeEnd="0"/>
             <Control type="ScriptSlider" id="knbPlayerFade" value="0.0"/>
-            <Control type="ScriptSlider" id="knbPlayerGain" value="0"/>
-            <Control type="ScriptSlider" id="knbFolderFade" value="0.01"/>
-            <Control type="ScriptSlider" id="knbFolderGain" value="0"/>
-            <Control type="ScriptButton" id="btnFolderNormalise" value="0"/>
+            <Control type="ScriptSlider" id="knbPlayerGain" value="0.0"/>
+            <Control type="ScriptSlider" id="knbFolderFade" value="0.009999999776482582"/>
+            <Control type="ScriptSlider" id="knbFolderGain" value="0.0"/>
+            <Control type="ScriptButton" id="btnFolderNormalise" value="0.0"/>
           </Content>
           <UIData Source="tumultUIData"/>
         </Processor>

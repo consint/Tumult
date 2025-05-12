@@ -20,7 +20,10 @@ include("icons.js");
 include("loadCustomSample.js");
 
 const var NUMBER_NOISES = 100;
-const var NUMBER_SAMPLES = 95;
+const var NUMBER_CORE_SAMPLES = 45;
+const var NUMBER_NOISE_PLETHORA_SAMPLES = 50;
+const var CORE_SIZE = 111739330;
+const var PLETHORA_SIZE = 154946200;
 const var SAMPLE_SIZE = 266685530;
 const var SAMPLE_CATEGORIES = ["hum", "machine", "static", "vinyl", "world", "noiseplethora"];
 
@@ -36,50 +39,125 @@ const var sampleFiles = FileSystem.findFiles(sampleFolder, "*.wav", true);
 
 reg sampleSize = 0;
 reg catFoldersExist = true;
+reg coreSamplesExists = false;
+reg plethoraSamplesExists = false;
 
-inline function sampleFilesCheck()
+inline function checkCoreSamples()
 {
-	// Sample Folder
+	local humFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[0]);
+	local machineFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[1]);
+	local staticFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[2]);
+	local vinylFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[3]);
+	local worldFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[4]);
+
+	// check Category Folder
+	if (!humFolder.isDirectory() || !machineFolder.isDirectory() || !staticFolder.isDirectory() || !vinylFolder.isDirectory() || !worldFolder.isDirectory())
+		return false;
+	
+	// check count .wav files
+	local coreFiles = [	FileSystem.findFiles(humFolder, "*.wav", false),
+						FileSystem.findFiles(machineFolder, "*.wav", false),
+						FileSystem.findFiles(staticFolder, "*.wav", false),
+						FileSystem.findFiles(vinylFolder, "*.wav", false),
+						FileSystem.findFiles(worldFolder, "*.wav", false)];
+	
+	if ((coreFiles[0].length + coreFiles[1].length + coreFiles[2].length + coreFiles[3].length + coreFiles[4].length) < NUMBER_CORE_SAMPLES)
+		return false;
+	
+	// check samples filesize
+	local coreSamplesFileSize = 0;
+	
+	for (i = 0; i < coreFiles.length; i++)
+	{
+		for (k = 0; k < coreFiles[i].length; k++)
+		{
+			coreSamplesFileSize += coreFiles[i][k].getSize();
+		}
+	}
+	
+	if (coreSamplesFileSize < CORE_SIZE)
+		return false;
+		
+	return true;
+}
+
+inline function checkNoisePlethoraSamples()
+{
+	local plethoraFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[5]);
+	local plethoraA = plethoraFolder.getChildFile("A");
+	local plethoraB = plethoraFolder.getChildFile("B");
+	local plethoraC = plethoraFolder.getChildFile("C");
+	
+	// check Category Folder
+	if (!plethoraFolder.isDirectory() || !plethoraA.isDirectory() || !plethoraB.isDirectory() || !plethoraC.isDirectory())
+		return false;
+	
+	// check count .wav files
+	local plethoraFiles = FileSystem.findFiles(plethoraFolder, "*.wav", true);
+	
+	if (plethoraFiles.length < NUMBER_NOISE_PLETHORA_SAMPLES)
+		return false;
+	
+	// check samples filesize
+	local plethoraSamplesFileSize = 0;
+	
+	for (i = 0; i < plethoraFiles.length; i++)
+	{
+		plethoraSamplesFileSize += plethoraFiles[i].getSize();
+	}
+	
+	if (plethoraSamplesFileSize < PLETHORA_SIZE)
+		return false;
+		
+	return true;
+}
+
+inline function checkSamples()
+{
+	// Sample Directory
 	if (!sampleFolder.isDirectory())
 	{
 		pnlError.set("text", "Sample folder not found");
-		return false;
+		coreSamplesExists = false;
+		plethoraSamplesExists = false;
+		pnlError.set("visible", 1);	
+		return;
 	}
 	
-	// count .wav files
-	if (sampleFiles.length < NUMBER_SAMPLES)
-	{
-		pnlError.set("text", "Not all samples found");
-		return false;
-	}
+	// Samples
+	local core = checkCoreSamples();
+	local plethora = checkNoisePlethoraSamples();
 	
-	// calculate sample size
-	for(i = 0; i < sampleFiles.length; i++)
+	if (!core && !plethora)
 	{
-		sampleSize += sampleFiles[i].getSize();
+		pnlError.set("text", "No samples found");
+		coreSamplesExists = false;
+		plethoraSamplesExists = false;
+		pnlError.set("visible", 1);
 	}
-	if (sampleSize < SAMPLE_SIZE)
+	else if (core && !plethora)
 	{
-		pnlError.set("text", "Not all samples found");
-		return false;
+		pnlError.set("text", "Noise Plethora samples not found");
+		coreSamplesExists = true;
+		plethoraSamplesExists = false;
+		pnlError.set("visible", 1);
 	}
-	
-	// Category folders
-	for(i = 0; i < SAMPLE_CATEGORIES.length; i++)
+	else if (!core && plethora)
 	{
-		reg catFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[i]);
-		if(!catFolder.isDirectory())
-		{
-			pnlError.set("text", "Not all samples found");
-			catFoldersExist = false;
-			return;
-		}
+		pnlError.set("text", "Core samples not found");
+		coreSamplesExists = false;
+		plethoraSamplesExists = true;
+		pnlError.set("visible", 1);
 	}
-	return catFoldersExist;
+	else if (core && plethora)
+	{
+		coreSamplesExists = true;
+		plethoraSamplesExists = true;
+		pnlError.set("visible", 0);
+	}		
 }
-
-if (!sampleFilesCheck())
-	pnlError.set("visible", 1);
+checkSamples();
+	
 
 // ##############
 // LAF
@@ -685,7 +763,7 @@ pnlError.setPaintRoutine(function(g)
 	
 	g.fillPath(warning, [0, 1, 16, 16]);
 	g.setFont("Roboto-Medium", 14);
-	g.drawAlignedText(pnlError.get("text"), [20, 0, a[2], a[3]], "centred");
+	g.drawAlignedText(pnlError.get("text"), [25, 0, a[2], a[3]], "left");
 });
 
 // pnlSampleFolderLocation
@@ -1275,18 +1353,24 @@ const var sampleMap = Synth.getAudioSampleProcessor("Script FX1").getAudioFile(1
 inline function playNoise(value)
 {
 	if (value <= 5) // Noises
-	{
+	{			
 		sntumult.setAttribute(sntumult.switch_noise, 1);
 		sntumult.setAttribute(sntumult.noise, value-1);
 	}
 	else if (value > 5 && value <= 50) // sampled_noises
 	{
+		if (!coreSamplesExists)
+			return;
+
 		sampleMap.loadFile("{XYZ::SampleMap}" + "sampled_noises");
 		sntumult.setAttribute(sntumult.switch_noise, 2);
 		Synth.playNote(value-6, 124);
 	}
 	else if (value > 50 && value <= 100) // noise_plethora
 	{
+		if (!plethoraSamplesExists)
+			return;
+
 		sampleMap.loadFile("{XYZ::SampleMap}" + "noise_plethora");
 		sntumult.setAttribute(sntumult.switch_noise, 2);
 		Synth.playNote(value -51, 124);

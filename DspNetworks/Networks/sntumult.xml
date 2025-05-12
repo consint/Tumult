@@ -224,7 +224,7 @@
                             Name="loopfadeplayer">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="576000"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="0"/>
                           </AudioFiles>
                         </ComplexData>
                         <Parameters>
