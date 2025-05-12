@@ -41,7 +41,7 @@
             <Control type="ScriptSlider" id="knbEqLPQ" value="0.00227481359615922"/>
             <Control type="ScriptComboBox" id="cmbSettingsAnalyzer" value="1.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsHostPlay" value="1.0"/>
-            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="{SAMPLE_FOLDER}world/fire2.wav"
+            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data=""
                      rangeStart="0" rangeEnd="0"/>
             <Control type="ScriptSlider" id="knbPlayerFade" value="0.0"/>
             <Control type="ScriptSlider" id="knbPlayerGain" value="0.0"/>

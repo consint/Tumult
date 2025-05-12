@@ -398,6 +398,9 @@ btnExistsNo.setLocalLookAndFeel(lafBtnLight);
 btnFImportYes.setLocalLookAndFeel(lafBtnLight);
 btnFImportCancel.setLocalLookAndFeel(lafBtnLight);
 btnFImportSelect.setLocalLookAndFeel(lafBtnLight);
+btnMissingDelete.setLocalLookAndFeel(lafBtnLight);
+btnMissingLoad.setLocalLookAndFeel(lafBtnLight);
+btnMissingCancel.setLocalLookAndFeel(lafBtnLight);
 
 lafBtnLight.registerFunction("drawToggleButton", function(g, obj)
 {

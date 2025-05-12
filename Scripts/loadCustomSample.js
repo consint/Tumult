@@ -32,7 +32,12 @@ const var pnlFImportFiles = Content.getComponent("pnlFImportFiles");
 const var pnlMsgDelete = Content.getComponent("pnlMsgDelete");
 const var pnlMsgExists = Content.getComponent("pnlMsgExists");
 const var pnlLoadAnimation = Content.getComponent("pnlLoadAnimation");
+const var pnlMsgMissingFile = Content.getComponent("pnlMsgMissingFile");
 const var pnlLoadingAnimation = Content.getComponent("pnlLoadingAnimation");
+
+const var btnMissingDelete = Content.getComponent("btnMissingDelete");
+const var btnMissingLoad = Content.getComponent("btnMissingLoad");
+const var btnMissingCancel = Content.getComponent("btnMissingCancel");
 
 const var AudioWaveform1 = Content.getComponent("AudioWaveform1");
 const var wFormW = AudioWaveform1.getWidth();
@@ -161,16 +166,21 @@ inline function customLoad(name)
 
 	local file = FileSystem.fromAbsolutePath(obj.file);
 	
-	if (pnlCustomSamples.get("visible") == 1)
+	if (!file.isFile())
 	{
-		if (!file.isFile())
-		{
-			s.loadFile("");
-			pnlLoadSample.set("visible", 1);
-			setFileInfo(obj.file, 0, 0, false);
-			showMessage("Can't open the audio file.");
-		}
+		s.loadFile("");
+		pnlMsgMissingFile.set("text", name);
+		pnlMsgMissingFile.data.fileName = file.toString(3);
+		pnlMsgMissingFile.set("visible", 1);
 		
+		lblSampleName.set("text", name);
+		knbPlayerFade.setValue(obj.fade);
+		knbPlayerGain.setValue(obj.gain);
+		knbPlayerFade.changed();
+		knbPlayerGain.changed();
+	}
+	else
+	{		
 		loadSample(file);
 		pnlLoopStart.set("x", obj.startX);
 		pnlLoopEnd.set("x", obj.endX);
@@ -181,33 +191,43 @@ inline function customLoad(name)
 		setKnbEndValue();
 		knbPlayerFade.changed();
 		knbPlayerGain.changed();
-		
+	}
+	
+	if (pnlCustomSamples.get("visible") == 1)
+	{
 		setRange();
 		pnlLoop.repaint();
 	}
-	else
+}
+// Cancel
+inline function onbtnMissingCancelControl(component, value)
+{
+	clearSample();
+	pnlMsgMissingFile.set("visible", 0);
+};
+Content.getComponent("btnMissingCancel").setControlCallback(onbtnMissingCancelControl);
+// Delete
+inline function onbtnMissingDeleteControl(component, value)
+{
+	customDelete(pnlMsgMissingFile.get("text") , true);
+	pnlMsgMissingFile.set("visible", 0);
+	getSetPresetList();
+	clearSample();
+};
+Content.getComponent("btnMissingDelete").setControlCallback(onbtnMissingDeleteControl);
+// Import Audio File
+inline function onbtnMissingLoadControl(component, value)
+{
+	FileSystem.browse(FileSystem.Samples, false, "*.wav", function(file)
 	{
 		if (!file.isFile())
-		{
-			s.loadFile("");
-			showMessage("Can't open the audio file.");
 			return;
-		}
-		else
-		{
-			loadSample(file);
-			pnlLoopStart.set("x", obj.startX);
-			pnlLoopEnd.set("x", obj.endX);
-			knbPlayerFade.setValue(obj.fade);
-			knbPlayerGain.setValue(obj.gain);
-			
-			setKnbStartValue();
-			setKnbEndValue();
-			knbPlayerFade.changed();
-			knbPlayerGain.changed();
-		}
-	}
-}
+		
+		loadSample(file);
+		pnlMsgMissingFile.set("visible", 0);
+	});
+};
+Content.getComponent("btnMissingLoad").setControlCallback(onbtnMissingLoadControl);
 
 // Save
 inline function customSave(name)
@@ -827,11 +847,6 @@ pnlCustomSamples.setPaintRoutine(function(g)
 	g.setColour(pnlBackground.get("textColour"));
 	g.drawLine(0, a[2], 56, 56, 0.6);
 	
-	/*g.setColour(0xFF1E2222);
-	g.drawLine(0, a[2], 378, 378, 1);
-	g.setColour(pnlBackground.get("textColour"));
-	g.drawLine(0, a[2], 379, 379, 0.6);*/
-	
 	// File Info Border
 	g.setColour(pnlBackground.get("textColour"));
 	g.drawRoundedRectangle([18, 346, 450, 110], 3, 1);
@@ -1082,7 +1097,6 @@ lafCustom.setInlineStyleSheet("
 		border-radius: 1px;
 	}
 ");
-// background: rgba(219, 165, 7, 1);
 
 // Panel Load Sample
 pnlLoadSample.setPaintRoutine(function(g)
@@ -1133,7 +1147,6 @@ pnlLoopEnd.setPaintRoutine(function(g)
 	var a = this.getLocalBounds(0);
 	
 	g.setColour(this.get("textColour"));
-	//g.fillRect([0, 0, 3, a[3]]);
 	g.fillRoundedRectangle([0, 0, 3, a[3]], 1);
 });
 
@@ -1231,6 +1244,28 @@ pnlMsgExists.setPaintRoutine(function(g)
 	// Text
 	g.setFont("Roboto-Medium", 15);
 	g.drawMultiLineText("The Noise already exists. Do you want to overwrite\n" + this.get("text") + "?", [120, 210], 320, "centred", 5);
+});
+
+pnlMsgMissingFile.setPaintRoutine(function(g)
+{
+	var a = this.getLocalBounds(0);
+			
+		// background plugin
+		g.setGradientFill([pnlBackground.get("itemColour"), 450, 0, pnlBackground.get("bgColour"), a[2], a[3]]);
+		g.setOpacity(0.90);
+		g.fillRect(a);
+		
+		// background message
+		g.setColour(this.get("bgColour"));
+		g.fillRoundedRectangle([20, 160, 450, 160], 3);
+		
+		// Icon
+		g.setColour(this.get("textColour"));
+		g.fillPath(question, [60, 190, 55, 55]);
+		
+		// Text
+		g.setFont("Roboto-Medium", 15);
+		g.drawMultiLineText("Can't open the audio file\n" + this.data.fileName + "\nWhat do you want to do?", [120, 200], 320, "centred", 5);
 });
 
 pnlLoadAnimation.setPaintRoutine(function(g)
