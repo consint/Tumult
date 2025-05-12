@@ -24,8 +24,6 @@ const var NUMBER_CORE_SAMPLES = 45;
 const var NUMBER_NOISE_PLETHORA_SAMPLES = 50;
 const var CORE_SIZE = 111739330;
 const var PLETHORA_SIZE = 154946200;
-const var SAMPLE_SIZE = 266685530;
-const var SAMPLE_CATEGORIES = ["hum", "machine", "static", "vinyl", "world", "noiseplethora"];
 
 // ##############
 // Sample Check
@@ -35,80 +33,53 @@ const var pnlSampleFolderLocation = Content.getComponent("pnlSampleFolderLocatio
 
 const var sampleFolder = FileSystem.getFolder(FileSystem.Samples);
 pnlSampleFolderLocation.set("text", sampleFolder.toString(0));
-const var sampleFiles = FileSystem.findFiles(sampleFolder, "*.wav", true);
 
-reg sampleSize = 0;
-reg catFoldersExist = true;
+const var humSamples = ["hum2_alienhum1.wav", "hum5_vhs-hum.wav", "hum3_joedeshon__electrical_hum_01_cut.wav", "hum1_0ktober_hyperspace_cut.wav", "hum4_loose-connection-feedback-hum.wav"];
+const var machineSamples = ["machine9_thailand-hotel-hallway-heavy-ventilation-hum-distant-voices-man-spits-middle.wav", "machine6_lettersort.wav", "machine7_oven-hum-2_cut.wav", "machine3_fridge-hum-kitchen-2012_cut.wav", "machine4_fridge-hum-loud-saint-john_cut.wav", "machine5_furnace-propane-pump-hum-rattle-nearby.wav", "machine1_computer_fan_hum_cut.wav", "machine11_washing-machine-rinse.wav", "machine2_dough-machine-electricity-001_cut.wav", "machine8_tattoo-air-conditioning-blowing-traffic-hum-outside_cut.wav", "machine10_vending-machine-hum_cut.wav"];
+const var staticSamples = ["static6_tv-static_cut.wav", "static5_radio-fuzz-for-old-radio-broadcast-ff233_cut.wav", "static1_electric-zap-electricity-2.wav", "static3_film_static_03_cut.wav", "static2_electrical-noise.wav", "static4_gramophone_stereo.wav"];
+const var vinylSamples = ["vinyl3_Vinyl Dust2.wav", "vinyl2_oldvinyl_128.wav", "vinyl4_Vinyl Crackle Analogue 1.wav", "vinyl5_vinyl-crackle-1_edit.wav", "vinyl1_Runoff 139 BPM.wav"];
+const var worldSamples = ["fire4_campfire.wav", "crowd_large_crowd_medium_distance_stereo.wav", "waterfall2_krka_waterfall2_f_4824.wav", "fire3_campfire-01.wav", "rain2_forest-cabin-summer-rain-5.wav", "fire1_ambiance_campfire_loop_stereo.wav", "city1_city-ambiance-heavy-snow-wind.wav", "rain3_rain-and-thunder-in-the-countryside.wav", "rain1_field_la-rain_park_under-stone-bridge_02.wav", "rain5_rain-thunder-and-traffic.wav", "waterfall1_hidden-waterfall.wav", "waterfall3_turbulent-river-waterfall.wav", "fire2.wav", "waterfall4_sound.wav", "rain4_rain-in-the-midnight-city.wav", "underground_large-underground-metro-station-heavy-ventilation-and-distant-echo-voices.wav", "city3_distant-city-evening-traffic-5th-floor-balcony.wav", "city2_city-ambience-at-night-3.wav"];
+const var plethoraASamples = ["A3-xModRingSine_1.wav", "A3-xModRingSine_2.wav", "A4-CrossModRing_1.wav", "A0-RadioOhNo_1.wav", "A9-Basurilla_1.wav", "A8-GrainGlitchIII_2.wav", "A6-GrainGlitch_1.wav", "A2-xModRingSqr.wav", "A8-GrainGlitchIII_1.wav", "A4-CrossModRing_2.wav", "A1-Rwalk_SineFMFlange.wav", "A7-GrainGlitchII_1.wav", "A7-GrainGlitchII_2.wav", "A9-Basurilla_2.wav", "A5-Resonoise_long.wav", "A0-RadioOhNo_2.wav", "A6-GrainGlitch_2.wav"];
+const var plethoraBSamples = ["B6-PrimecCnoise.wav", "B3-SineFMcluster.wav", "B5-Primecluster.wav", "B4-TriFMcluster.wav", "B1-PwCluster.wav", "B7-FibonacciCluster.wav", "B8-PartialCluster.wav", "B0-ClusterSaw.wav", "B2-CrCluster2.wav", "B9-PhasingCluster.wav"];
+const var plethoraCSamples = ["C4-ArrayOnTheRocks_1.wav", "C9-Rwalk_LFree_1.wav", "C9-Rwalk_LFree_2.wav", "C8-Rwalk_BitCrushPW_1.wav", "C9-Rwalk_LFree_3.wav", "C6-WhoKnows_1.wav", "C2-WakingFilomena_1.wav", "C2-WakingFilomena_2.wav", "C1-Atari.wav", "C8-Rwalk_BitCrushPW_2.wav", "C3-P_S_H.wav", "C6-WhoKnows_3.wav", "C7-SatanWorkout_2.wav", "C5-ExistencelsPain_1.wav", "C4-ArrayOnTheRocks_2.wav", "C6-WhoKnows_2.wav", "C4-ArrayOnTheRocks_4.wav", "C0-BasuraTotal_2.wav", "C7-SatanWorkout_1.wav", "C8-Rwalk_BitCrushPW_3.wav", "C0-BasuraTotal_1.wav", "C4-ArrayOnTheRocks_3.wav", "C5-ExistencelsPain_2.wav"];
+const var plethoraFolder = sampleFolder.getChildFile("noiseplethora");
+const var humFolder = sampleFolder.getChildFile("hum");
+const var machineFolder = sampleFolder.getChildFile("machine");
+const var staticFolder = sampleFolder.getChildFile("static");
+const var vinylFolder = sampleFolder.getChildFile("vinyl");
+const var worldFolder = sampleFolder.getChildFile("world");
+const var plethoraA = plethoraFolder.getChildFile("A");
+const var plethoraB = plethoraFolder.getChildFile("B");
+const var plethoraC = plethoraFolder.getChildFile("C");
+
+const var allCoreFolders = [humFolder, machineFolder, staticFolder, vinylFolder, worldFolder];
+const var allPlethoraFolders = [plethoraA, plethoraB, plethoraC];
+const var allCoreSamples = [humSamples, machineSamples, staticSamples, vinylSamples, worldSamples];
+const var allPlethoraSamples = [plethoraASamples, plethoraBSamples, plethoraCSamples];
+
 reg coreSamplesExists = false;
 reg plethoraSamplesExists = false;
 
-inline function checkCoreSamples()
+inline function sampleCheck(allFolders, allSamples)
 {
-	local humFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[0]);
-	local machineFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[1]);
-	local staticFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[2]);
-	local vinylFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[3]);
-	local worldFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[4]);
+	local sampleSize = 0;
 
-	// check Category Folder
-	if (!humFolder.isDirectory() || !machineFolder.isDirectory() || !staticFolder.isDirectory() || !vinylFolder.isDirectory() || !worldFolder.isDirectory())
-		return false;
-	
-	// check count .wav files
-	local coreFiles = [	FileSystem.findFiles(humFolder, "*.wav", false),
-						FileSystem.findFiles(machineFolder, "*.wav", false),
-						FileSystem.findFiles(staticFolder, "*.wav", false),
-						FileSystem.findFiles(vinylFolder, "*.wav", false),
-						FileSystem.findFiles(worldFolder, "*.wav", false)];
-	
-	if ((coreFiles[0].length + coreFiles[1].length + coreFiles[2].length + coreFiles[3].length + coreFiles[4].length) < NUMBER_CORE_SAMPLES)
-		return false;
-	
-	// check samples filesize
-	local coreSamplesFileSize = 0;
-	
-	for (i = 0; i < coreFiles.length; i++)
+	for (i = 0; i < allFolders.length; i++)
 	{
-		for (k = 0; k < coreFiles[i].length; k++)
+		for (k = 0; k < allSamples[i].length; k++)
 		{
-			coreSamplesFileSize += coreFiles[i][k].getSize();
+			local file = allFolders[i].getChildFile(allSamples[i][k]);
+			
+			if (!file.isFile())
+				return false;
+			
+			sampleSize += file.getSize();
 		}
 	}
 	
-	if (coreSamplesFileSize < CORE_SIZE)
-		return false;
-		
-	return true;
-}
-
-inline function checkNoisePlethoraSamples()
-{
-	local plethoraFolder = sampleFolder.getChildFile(SAMPLE_CATEGORIES[5]);
-	local plethoraA = plethoraFolder.getChildFile("A");
-	local plethoraB = plethoraFolder.getChildFile("B");
-	local plethoraC = plethoraFolder.getChildFile("C");
+	if (sampleSize < CORE_SIZE)
+			return false;
 	
-	// check Category Folder
-	if (!plethoraFolder.isDirectory() || !plethoraA.isDirectory() || !plethoraB.isDirectory() || !plethoraC.isDirectory())
-		return false;
-	
-	// check count .wav files
-	local plethoraFiles = FileSystem.findFiles(plethoraFolder, "*.wav", true);
-	
-	if (plethoraFiles.length < NUMBER_NOISE_PLETHORA_SAMPLES)
-		return false;
-	
-	// check samples filesize
-	local plethoraSamplesFileSize = 0;
-	
-	for (i = 0; i < plethoraFiles.length; i++)
-	{
-		plethoraSamplesFileSize += plethoraFiles[i].getSize();
-	}
-	
-	if (plethoraSamplesFileSize < PLETHORA_SIZE)
-		return false;
-		
 	return true;
 }
 
@@ -125,36 +96,31 @@ inline function checkSamples()
 	}
 	
 	// Samples
-	local core = checkCoreSamples();
-	local plethora = checkNoisePlethoraSamples();
+	local core = sampleCheck(allCoreFolders, allCoreSamples);
+	local plethora = sampleCheck(allPlethoraFolders, allPlethoraSamples);
+	
+	coreSamplesExists = core;
+	plethoraSamplesExists = plethora;
 	
 	if (!core && !plethora)
 	{
 		pnlError.set("text", "No samples found");
-		coreSamplesExists = false;
-		plethoraSamplesExists = false;
 		pnlError.set("visible", 1);
 	}
 	else if (core && !plethora)
 	{
 		pnlError.set("text", "Noise Plethora samples not found");
-		coreSamplesExists = true;
-		plethoraSamplesExists = false;
 		pnlError.set("visible", 1);
 	}
 	else if (!core && plethora)
 	{
 		pnlError.set("text", "Core samples not found");
-		coreSamplesExists = false;
-		plethoraSamplesExists = true;
 		pnlError.set("visible", 1);
 	}
 	else if (core && plethora)
 	{
-		coreSamplesExists = true;
-		plethoraSamplesExists = true;
 		pnlError.set("visible", 0);
-	}		
+	}
 }
 checkSamples();
 	
