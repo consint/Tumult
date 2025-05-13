@@ -10,7 +10,7 @@
           <ChildProcessors/>
           <Content>
             <Control type="ScriptSlider" id="knbNoiseGain" value="-10.0"/>
-            <Control type="ScriptComboBox" id="cmbSelect" value="1.0"/>
+            <Control type="ScriptComboBox" id="cmbSelect" value="1"/>
             <Control type="ScriptSlider" id="knbMix" value="0.5"/>
             <Control type="ScriptSlider" id="knbSwitch" value="0.0"/>
             <Control type="ScriptSlider" id="knbDuckRelease" value="15.0"/>
@@ -43,11 +43,11 @@
             <Control type="ScriptComboBox" id="cmbSettingsHostPlay" value="1.0"/>
             <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data=""
                      rangeStart="0" rangeEnd="0"/>
-            <Control type="ScriptSlider" id="knbPlayerFade" value="0.0"/>
-            <Control type="ScriptSlider" id="knbPlayerGain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbFolderFade" value="0.009999999776482582"/>
-            <Control type="ScriptSlider" id="knbFolderGain" value="0.0"/>
-            <Control type="ScriptButton" id="btnFolderNormalise" value="0.0"/>
+            <Control type="ScriptSlider" id="knbPlayerFade" value="0"/>
+            <Control type="ScriptSlider" id="knbPlayerGain" value="0"/>
+            <Control type="ScriptSlider" id="knbFolderFade" value="0.01"/>
+            <Control type="ScriptSlider" id="knbFolderGain" value="0"/>
+            <Control type="ScriptButton" id="btnFolderNormalise" value="0"/>
           </Content>
           <UIData Source="tumultUIData"/>
         </Processor>

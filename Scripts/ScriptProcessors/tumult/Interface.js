@@ -955,8 +955,7 @@ inline function onbtnBypassControl(component, value)
 Content.getComponent("btnBypass").setControlCallback(onbtnBypassControl);
 
 // btnSettings
-const var btnAdd = Content.getComponent("btnAdd");
-reg tmpCmbSelectValue = 1;
+reg tmpCmbSelectValue = "White";
 
 inline function onbtnSettingsControl(component, value)
 {
@@ -965,7 +964,7 @@ inline function onbtnSettingsControl(component, value)
 	if (!value)
 		return;
 	
-	tmpCmbSelectValue = cmbSelect.getValue();
+	tmpCmbSelectValue = cmbSelect.get("text");
 	btnAdd.setValue(0);
 	btnAdd.changed();
 };
@@ -1014,12 +1013,19 @@ inline function onbtnAddControl(component, value)
 		// set Switch to neutral
 		sntumult.setAttribute(sntumult.switch_branch, 2);
 		
-		tmpCmbSelectValue = cmbSelect.getValue();
+		tmpCmbSelectValue = cmbSelect.getItemText();
 	}
 	else
 	{
 		setNoiseSelectItems();
-		cmbSelect.setValue(tmpCmbSelectValue);
+		
+		local index = allSamples.findIndex(function(element){ return element.contains(tmpCmbSelectValue);});
+
+		if (isDefined(index))
+			cmbSelect.setValue(index+1);
+		else
+			cmbSelect.setValue(1);
+			
 		cmbSelect.changed();
 		knbSwitch.changed();
 	}

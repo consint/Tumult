@@ -4,6 +4,8 @@
 const var pnlLoadSample = Content.getComponent("pnlLoadSample");
 const var s = Synth.getAudioSampleProcessor("Script FX1").getAudioFile(0);
 
+const var btnAdd = Content.getComponent("btnAdd");
+
 const var btnSampleNew = Content.getComponent("btnSampleNew");
 const var btnSavePreset = Content.getComponent("btnSavePreset");
 const var btnPlayerDelete = Content.getComponent("btnPlayerDelete");
@@ -71,6 +73,7 @@ reg numberCustomNoises;
 const var cmbSelect = Content.getComponent("cmbSelect");
 
 reg userPresets = [];
+reg allSamples = [];
 reg customFolder;
 const var appFolder = FileSystem.getFolder(FileSystem.AppData);
 
@@ -101,15 +104,17 @@ getSetPresetList();
 
 inline function setNoiseSelectItems()
 {
-	cmbSelect.set("items", NOISES.join("\n"));
-	
+	allSamples.reserve(NOISES.length + userPresets.length);
+	allSamples = NOISES.clone();
+
 	if (userPresets.length > 0)
 	{
 		for (p in userPresets)
 		{
-			cmbSelect.addItem("Custom::" + p);
+			allSamples.push("Custom::" + p);
 		}
 	}
+	cmbSelect.set("items", allSamples.join("\n"));
 	cmbSelect.changed();
 }
 setNoiseSelectItems();
@@ -212,7 +217,10 @@ inline function onbtnMissingDeleteControl(component, value)
 	customDelete(pnlMsgMissingFile.get("text") , true);
 	pnlMsgMissingFile.set("visible", 0);
 	getSetPresetList();
+	setNoiseSelectItems();
 	clearSample();
+	cmbSelect.setValue(1);
+	cmbSelect.changed();
 };
 Content.getComponent("btnMissingDelete").setControlCallback(onbtnMissingDeleteControl);
 // Import Audio File
@@ -223,6 +231,9 @@ inline function onbtnMissingLoadControl(component, value)
 		if (!file.isFile())
 			return;
 		
+		btnAdd.setValue(1);
+		btnAdd.changed();
+		currentPreset = pnlMsgMissingFile.get("text");
 		loadSample(file);
 		pnlMsgMissingFile.set("visible", 0);
 	});
