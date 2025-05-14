@@ -963,7 +963,7 @@ inline function onbtnSettingsControl(component, value)
 	if (!value)
 		return;
 	
-	tmpCmbSelectValue = cmbSelect.get("text");
+	tmpCmbSelectValue = cmbSelect.getItemText();
 	btnAdd.setValue(0);
 	btnAdd.changed();
 };
