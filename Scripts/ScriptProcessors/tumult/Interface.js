@@ -643,7 +643,6 @@ lafCmbFilter.registerFunction("getIdealPopupMenuItemSize", function(obj)
 	return [57, 18];
 });
 
-
 // Settings
 const var pnlSettings = Content.getComponent("pnlSettings");
 const var pnlSettingsFFT = Content.getComponent("pnlSettingsFFT");
