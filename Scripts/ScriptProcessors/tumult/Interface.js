@@ -15,9 +15,8 @@ Content.makeFrontInterface(490, 532);
 Engine.loadFontAs("{PROJECT_FOLDER}Fonts/Roboto-Medium.ttf", "Roboto-Medium");
 Engine.setGlobalFont("Roboto-Medium");
 
-// Includes
+// Include
 include("icons.js");
-include("loadCustomSample.js");
 
 const var NUMBER_NOISES = 100;
 const var NUMBER_CORE_SAMPLES = 45;
@@ -123,6 +122,12 @@ inline function checkSamples()
 	}
 }
 checkSamples();
+
+
+// Include
+include("loadCustomSample.js");
+
+
 	
 
 // ##############

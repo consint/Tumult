@@ -1,12 +1,14 @@
 # Tumult
-Tumult makes noise. Tumult texturizes, accentuates and adds warmth and age. Tumult comes with 50 hand-picked noises. You can play them raw, let them follow your sounds, or duck them away. Tumult comes with an 5-band EQ that lets you shape the noises to your liking. Tumult is a free and open source 64bit VST3 effect plugin for Linux and Windows.
+Tumult makes noise. Tumult texturizes, accentuates and adds warmth and age. Tumult comes with 100 hand-picked noises. You can choose one of them or import your own samples and play them raw, let them follow your sounds or duck them away. Tumult comes with an 5-band EQ that lets you shape the noises to your liking. Tumult is a free and open source 64bit VST3 effect plugin for Linux and Windows. 
+
+You can see Tumult in action here: https://www.youtube.com/watch?v=KRveIBVNHOA
 
 Download the latest version here: https://github.com/consint/Tumult/releases/
 
 ![Preview of the Tumult interface](tumult.png)
 
 ## How it works
-The effect plugin plays one of 50 noises that can be added to the actual audio signal using the ‘Mix’ knob. The ‘Gain’ knob controls the volume, and the equaliser controls the frequency response of the noise - the actual audio signal is not affected.
+The effect plugin plays one of 100 noises, or the samples you have imported, and add them to the actual audio signal using the ‘Mix’ knob. The ‘Gain’ knob controls the volume, and the equalizer controls the frequency response of the noise - the actual audio signal is not affected.
 
 In ‘Raw’ mode, the noise is played back without any influence. In ‘Duck’ mode, the noise is ducked away by the actual audio signal. In ‘Folllow’ mode, the noise only plays when the actual audio signal is playing (depending on the threshold).
 
@@ -16,9 +18,14 @@ In ‘Raw’ mode, the noise is played back without any influence. In ‘Duck’
 3. Copy the ‘TumultSamples’ folder wherever you want, for example to a location where you also save other samples.
 4. In order for Tumult to **find the samples**, the path to the sample folder must be specified in the plugin. To do this, open the plugin in a host of your choice, open the settings, select ‘Change Sample Folder Location’ and select the ‘TumultSamples’ folder. For the changes to take effect, you must remove the plugin from the host and reload it.
 
+## Known bugs
+* The noise selection box shows tick marks in the wrong place. This is a bug in Hise that I have already [reported](https://github.com/christophhart/HISE/issues/739).
+* Drag & Drop does not work on Linux. This is a general problem for which there is, as far as I know, no generally applicable solution in JUCE.
+
 ## How to use
 ### General
 Buttons can be adjusted by dragging. If you hold Ctrl or Alt while dragging, the knob can be fine-tuned. If you press Shift while clicking on a button, you can enter a value as text.
+
 
 ### Interface
 #### Bypass
@@ -31,7 +38,7 @@ The ‘ci‘ logo or the settings icon shows and closes the settings.
 Adjusts the volume of the noise. I have placed a **clipper** behind the noise so that gain values above 0 will distort the noise.
 
 #### Noise selection
-The noise can be selected using the combo box or the two arrows next to it. The different sounds are divided into six categories, whereby all sounds in the ‘Noise’ category are generated and the sounds in all other categories are samples.
+The noise can be selected using the combo box or the two arrows next to it. The different sounds are divided into eight categories, whereby all sounds in the ‘Noise’ category are generated and the sounds in all other categories are samples. The ‘Custom’ category is only displayed once at least one of your own samples has been imported into Tumult.
 
 #### Mix
 Blends between the actual signal and the noise.
@@ -50,6 +57,39 @@ Determines the time it takes for the noise to stop playing after the end of the 
 
 #### Equalizer
 Works like any conventional EQ. Left-click to activate a filter. Right-click to deactivate it. You can move the individual filters using drag and drop. The Q factor can be set using the mouse wheel. Band 1 is a high-pass filter. Band two can be switched between a bell and low shelf filter. Band 3 is a bell filter. Band 4 can be switched between a bell and a high shelf filter. Band 5 is a low-pass filter.
+
+### Add / Import Samples
+Click on the + at the top right of the plugin to open the sample import window.
+
+#### New
+Clears the window and lets you import a new sample.
+
+#### Folder Import
+Opens another window that allows you to import all .wav files in a folder at once. Once you have selected a folder, the number of audio files to be imported is displayed. Use the gain and fade knobs to set the values for all samples. If you select ‘Normalise’, all samples are normalised during import. Depending on the size of the files and the sampling rate, this may take a little longer. Click on ‘Import’ if you want to start the import process. ‘Cancel’ cancels the import process and closes the “Folder Import” window.
+
+#### Load
+Here you can open existing samples for editing. Note that only a click on ‘Save’ saves the changes.
+
+#### Save
+Click on ‘Save’ to save the sample with the settings you have made. After saving, the sample appears under the specified name in the ‘Custom’ category.
+
+#### Delete
+A previously loaded sample can be deleted here. This does not delete the actual audio file but only the entry in Tumult.
+
+#### Drop audio file or Right Click to open Browser
+Here you can import your actual audio file. Only the .wav format is supported. After successfully opening the file, the name and waveform of the file will be displayed. The name can be changed as desired. The loop to be played can be set using the two white bars to the left and right of the waveform.
+
+#### Fade
+Here you can set the length of the fade that fades out the end of the loop and fades in the beginning of the loop at the same time. This can prevent clicking.
+
+#### Gain
+The volume of the sample can be set here.
+
+#### Normalise
+Click on ‘Normalise’ to set the gain so that the sample is normalised to 0dB.
+
+#### File Info
+The length of the sample, the sampling rate and the file path are displayed here.
 
 ### Settings
 #### Show Spectrum Analyzer
@@ -82,9 +122,9 @@ If you need help you can ask me or have a look at the great [Hise forum](https:/
 ## Credits
 Many thanks to Christoph Hart for making [Hise](https://github.com/christophhart/HISE). Thanks to David Healey for the great [Hise tutorials](https://www.youtube.com/@DHealey/featured). Thanks to the whole [Hise forum](https://forum.hise.audio/) for the friendly interaction and the great mutual help and support.
 
-All samples are from [freesound.org](https://freesound.org/) and are licensed under a ‘Creative Commons 0’ licence. My thanks go to all the producers who created and provided these samples.
+All samples from categories Vinyl, Static, Machine, Hum and World are from [freesound.org](https://freesound.org/) and are licensed under a ‘Creative Commons 0’ licence. My thanks go to all the producers who created and provided these samples. You can find all links to the original samples down below (as of September 2024).
 
-You can find all links to the original samples here (as of September 2024):
+All samples from category Noise Plethora are recordings from the Eurorack module of the same name by [Befaco](https://www.befaco.org/noise-plethora/). They are published under a ‘Creative Commons 0’ licence on [freesound.org](https://freesound.org/).de and can be downloaded here: https://freesound.org/people/consint/
 
 #### Vinyl
 * Vinyl 1: https://freesound.org/s/699693/

@@ -46,26 +46,25 @@ const var wFormW = AudioWaveform1.getWidth();
 const var wFormH = AudioWaveform1.getHeight();
 const var barW = pnlLoopStart.getWidth();
 
-const var SLASH = (Engine.getOS() == "WIN") ? "\\" : "/";
-const var NOISES = ["Noise::White", "Noise::Pink", "Noise::Brown", "Noise::Velvet", "Noise::Crushed", 
-					"Vinyl::Vinyl 1", "Vinyl::Vinyl 2", "Vinyl::Vinyl 3", "Vinyl::Vinyl 4", "Vinyl::Vinyl 5", 
-					"Static::Electric 1", "Static::Electric 2", "Static::Film", "Static::Gramophone", "Static::Radio", "Static::TV", 
-					"Machine::Computer", "Machine::Dough", "Machine::Fridge 1", "Machine::Fridge 2", "Machine::Furnance", "Machine::Letters", "Machine::Oven", "Machine::Air 1", "Machine::Air 2", "Machine::Vending", "Machine::Washing", 
-					"Hum::Alien 1", "Hum::Alien 2", "Hum::Electric 1", "Hum::Electric 2", "Hum::VHS", 
-					"World::City 1", "World::City 2", "World::City 3", "World::Crowd", "World::Fire 1", "World::Fire 2", "World::Fire 3", "World::Fire 4", "World::Rain 1", "World::Rain 2", "World::Rain 3", "World::Rain 4", "World::Rain 5", "World::Underground", "World::Waterfall 1", "World::Waterfall 2", "World::Waterfall 3", "World::Waterfall 4", 
-					"Noise Plethora::A::RadioOhNo 1", "Noise Plethora::A::RadioOhNo 2", "Noise Plethora::A::Rwalk_SineFMFlange", "Noise Plethora::A::xModRingSqr", "Noise Plethora::A::xModRingSine 1", "Noise Plethora::A::xModRingSine 2", "Noise Plethora::A::CrossModRing 1", "Noise Plethora::A::CrossModRing 2", "Noise Plethora::A::Resonoise", "Noise Plethora::A::GrainGlitch 1", "Noise Plethora::A::GrainGlitch 2", "Noise Plethora::A::GrainGlitchII 1", "Noise Plethora::A::GrainGlitchII 2", "Noise Plethora::A::GrainGlitchIII 1", "Noise Plethora::A::GrainGlitchIII 2", "Noise Plethora::A::Basurilla 1", "Noise Plethora::A::Basurilla 2", 
-					"Noise Plethora::B::ClusterSaw", "Noise Plethora::B::PwCluster", "Noise Plethora::B::CrCluster2", "Noise Plethora::B::SineFMcluster", "Noise Plethora::B::TriFMcluster", "Noise Plethora::B::Primecluster", "Noise Plethora::B::PrimecCnoise", "Noise Plethora::B::FibonacciCluster", "Noise Plethora::B::PartialCluster", "Noise Plethora::B::PhasingCluster", 
-					"Noise Plethora::C::BasuraTotal 1", "Noise Plethora::C::BasuraTotal 2", "Noise Plethora::C::Atari", "Noise Plethora::C::WakingFilomena 1", "Noise Plethora::C::WakingFilomena 2", "Noise Plethora::C::P_S_H", "Noise Plethora::C::ArrayOnTheRocks 1", "Noise Plethora::C::ArrayOnTheRocks 2", "Noise Plethora::C::ArrayOnTheRocks 3", "Noise Plethora::C::ArrayOnTheRocks 4", "Noise Plethora::C::ExistencelsPain 1", "Noise Plethora::C::ExistencelsPain 2", "Noise Plethora::C::WhoKnows 1", "Noise Plethora::C::WhoKnows 2", "Noise Plethora::C::WhoKnows 3", "Noise Plethora::C::SatanWorkout 1", "Noise Plethora::C::SatanWorkout 2", "Noise Plethora::C::Rwalk_BitCrushPW 1", "Noise Plethora::C::Rwalk_BitCrushPW 2", "Noise Plethora::C::Rwalk_BitCrushPW 3", "Noise Plethora::C::Rwalk_LFree 1", "Noise Plethora::C::Rwalk_LFree 2", "Noise Plethora::C::Rwalk_LFree 3"];
+const var GEN_NOISES =  ["Noise::White", "Noise::Pink", "Noise::Brown", "Noise::Velvet", "Noise::Crushed"]; 
+const var CORE_CAT = ["Vinyl::", "Static::", "Machine::", "Hum::", "World::"];
+const var VINYL_NOISES = ["Vinyl 1", "Vinyl 2", "Vinyl 3", "Vinyl 4", "Vinyl 5"];
+const var STATIC_NOISES = ["Electric 1", "Electric 2", "Film", "Gramophone", "Radio", "TV"];
+const var MACHINE_NOISES = ["Computer", "Dough", "Fridge 1", "Fridge 2", "Furnance", "Letters", "Oven", "Air 1", "Air 2", "Vending", "Washing"];
+const var HUM_NOISES = ["Alien 1", "Alien 2", "Electric 1", "Electric 2", "VHS"];
+const var WORLD_NOISES = ["City 1", "City 2", "City 3", "Crowd", "Fire 1", "Fire 2", "Fire 3", "Fire 4", "Rain 1", "Rain 2", "Rain 3", "Rain 4", "Rain 5", "Underground", "Waterfall 1", "Waterfall 2", "Waterfall 3", "Waterfall 4"];
+const var CORE_NOISES = [VINYL_NOISES, STATIC_NOISES, MACHINE_NOISES, HUM_NOISES, WORLD_NOISES];
+
+const var PLETHORA_CAT = ["A::", "B::", "C::"];
+const var PLETHORA_A_NOISES = ["RadioOhNo 1", "RadioOhNo 2", "Rwalk_SineFMFlange", "xModRingSqr", "xModRingSine 1", "xModRingSine 2", "CrossModRing 1", "CrossModRing 2", "Resonoise", "GrainGlitch 1", "GrainGlitch 2", "GrainGlitchII 1", "GrainGlitchII 2", "GrainGlitchIII 1", "GrainGlitchIII 2", "Basurilla 1", "Basurilla 2"];
+const var PLETHORA_B_NOISES = ["ClusterSaw", "PwCluster", "CrCluster2", "SineFMcluster", "TriFMcluster", "Primecluster", "PrimecCnoise", "FibonacciCluster", "PartialCluster", "PhasingCluster"];
+const var PLETHORA_C_NOISES = ["BasuraTotal 1", "BasuraTotal 2", "Atari", "WakingFilomena 1", "WakingFilomena 2", "P_S_H", "ArrayOnTheRocks 1", "ArrayOnTheRocks 2", "ArrayOnTheRocks 3", "ArrayOnTheRocks 4", "ExistencelsPain 1", "ExistencelsPain 2", "WhoKnows 1", "WhoKnows 2", "WhoKnows 3", "SatanWorkout 1", "SatanWorkout 2", "Rwalk_BitCrushPW 1", "Rwalk_BitCrushPW 2", "Rwalk_BitCrushPW 3", "Rwalk_LFree 1", "Rwalk_LFree 2", "Rwalk_LFree 3"];
+const var PLETHORA_NOISES = [PLETHORA_A_NOISES, PLETHORA_B_NOISES, PLETHORA_C_NOISES];
 
 reg currentFile;
 reg numSamples;
 reg currentPreset = "";
 reg numberCustomNoises;
-
-
-
-
-
 
 // ##############
 // Custom loading, saving, ...
@@ -104,9 +103,47 @@ getSetPresetList();
 
 inline function setNoiseSelectItems()
 {
-	allSamples.reserve(NOISES.length + userPresets.length);
-	allSamples = NOISES.clone();
-
+	allSamples.reserve(NUMBER_NOISES + userPresets.length);
+	allSamples = GEN_NOISES.clone();
+	
+	local disCore = "";
+	local disPlethora = "";
+	
+	if (!coreSamplesExists && !plethoraSamplesExists)
+	{
+		disCore = "~~";
+		disPlethora = "~~";
+	}
+	else if (coreSamplesExists && !plethoraSamplesExists)
+	{
+		disCore = "";
+		disPlethora = "~~";
+	}
+	else if (!coreSamplesExists && plethoraSamplesExists)
+	{
+		disCore = "~~";
+		disPlethora = "";		
+	}
+	
+	// Add Core Samples
+	for (i = 0; i < CORE_CAT.length; i++)
+	{
+		for (k = 0; k < CORE_NOISES[i].length; k++)
+		{
+			allSamples.push(CORE_CAT[i] + disCore + CORE_NOISES[i][k] + disCore);
+		}
+	}
+	
+	// Add Plethora Samples
+	for (i = 0; i < PLETHORA_CAT.length; i++)
+	{
+		for (k = 0; k < PLETHORA_NOISES[i].length; k++)
+		{
+			allSamples.push("Noise Plethora::" + PLETHORA_CAT[i] + disPlethora + PLETHORA_NOISES[i][k] + disPlethora);
+		}
+	}
+	
+	// Add Custom Semples
 	if (userPresets.length > 0)
 	{
 		for (p in userPresets)
@@ -114,6 +151,7 @@ inline function setNoiseSelectItems()
 			allSamples.push("Custom::" + p);
 		}
 	}
+	
 	cmbSelect.set("items", allSamples.join("\n"));
 	cmbSelect.changed();
 }
