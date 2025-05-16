@@ -116,13 +116,11 @@ inline function setNoiseSelectItems()
 	}
 	else if (coreSamplesExists && !plethoraSamplesExists)
 	{
-		disCore = "";
 		disPlethora = "~~";
 	}
 	else if (!coreSamplesExists && plethoraSamplesExists)
 	{
-		disCore = "~~";
-		disPlethora = "";		
+		disCore = "~~";	
 	}
 	
 	// Add Core Samples
@@ -272,6 +270,7 @@ inline function onbtnMissingLoadControl(component, value)
 		btnAdd.setValue(1);
 		btnAdd.changed();
 		currentPreset = pnlMsgMissingFile.get("text");
+		btnPlayerDelete.set("enabled", 1);
 		loadSample(file);
 		pnlMsgMissingFile.set("visible", 0);
 	});

@@ -946,13 +946,8 @@ pnlFFT.setPaintRoutine(function(g)
 // ##############
 
 // Bypass
-reg dawBypass = false;
-
 inline function onbtnBypassControl(component, value)
 {
-	if (dawBypass)
-		return;
-
 	sntumult.setBypassed(1-value);
 	cmbSelect.changed();
 };
@@ -1210,9 +1205,6 @@ const var btnBypass = Content.getComponent("btnBypass");
 
 th.setOnBypass(function(value)
 {
-	if (dawBypass == value)
-		return;
-
 	if (value)
 	{
 		btnBypass.setValue(0);
@@ -1222,10 +1214,10 @@ th.setOnBypass(function(value)
 	{
 		btnBypass.setValue(1);
 		btnBypass.set("enabled", 1);
+		
+		if (sntumult.isBypassed())
+			btnBypass.changed();
 	}
-	
-	dawBypass = value;
-	btnBypass.changed();
 });
 
 // Knob Switch

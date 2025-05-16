@@ -24,7 +24,7 @@ In ‘Raw’ mode, the noise is played back without any influence. In ‘Duck’
 
 ## How to use
 ### General
-Buttons can be adjusted by dragging. If you hold Ctrl or Alt while dragging, the knob can be fine-tuned. If you press Shift while clicking on a button, you can enter a value as text.
+Knobs can be adjusted by dragging. If you hold Ctrl or Alt while dragging, the knob can be fine-tuned. If you press Shift while clicking on a knob, you can enter a value as text.
 
 
 ### Interface
@@ -111,7 +111,7 @@ The sample folder can be selected here.
 1. Install or compile [Faust](https://github.com/grame-cncm/faust) > 2.74.6
 2. Compile [Hise](https://github.com/christophhart/HISE) with Faust enabled (see https://forum.hise.audio/topic/6746/updated-build-instructions). For help you can watch the great videos by David Healey ([Linux](https://www.youtube.com/watch?v=rUuEoJk6FF8), [Windows](https://www.youtube.com/watch?v=D3kthNOQ9_s), [MacOS](https://www.youtube.com/watch?v=zeLeCSNh0XM)).
 3. Clone this repository or download the Tumult source code.
-4. Open Hise, select ‘File -> Load Project’ and select the Tumult folder. You do not need to load the file ‘tumult.xml’ as we need to compile the ‘DSP Networks’ first.
+4. Open Hise, select ‘File -> Load Project’ and select the Tumult folder.
 5. Go to ‘Export’ and select ‘Compile DSP Networks as dll’. On Windows this will compile the DSP Networks. On Linux you have to execute the file ‘.../Tumult/DspNetworks/Binaries/batchCompileLinux.sh’ in the terminal.
 6. Restart Hise and load the file ‘tumult.xml’.
 7. Select ‘Export -> Export as FX plugin’. 
