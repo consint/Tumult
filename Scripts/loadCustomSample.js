@@ -72,9 +72,47 @@ reg numberCustomNoises;
 const var cmbSelect = Content.getComponent("cmbSelect");
 
 reg userPresets = [];
+reg stockSamples = [];
 reg allSamples = [];
 reg customFolder;
 const var appFolder = FileSystem.getFolder(FileSystem.AppData);
+
+// Fill stockSamples
+stockSamples.reserve(NUMBER_NOISES);
+stockSamples = GEN_NOISES.clone();
+
+reg disCore = "";
+reg disPlethora = "";
+
+if (!coreSamplesExists && !plethoraSamplesExists)
+{
+	disCore = "~~";
+	disPlethora = "~~";
+}
+else if (coreSamplesExists && !plethoraSamplesExists)
+{
+	disPlethora = "~~";
+}
+else if (!coreSamplesExists && plethoraSamplesExists)
+{
+	disCore = "~~";	
+}
+// Add Core Samples
+for (i = 0; i < CORE_CAT.length; i++)
+{
+	for (k = 0; k < CORE_NOISES[i].length; k++)
+	{
+		stockSamples.push(CORE_CAT[i] + disCore + CORE_NOISES[i][k] + disCore);
+	}
+}
+// Add Plethora Samples
+for (i = 0; i < PLETHORA_CAT.length; i++)
+{
+	for (k = 0; k < PLETHORA_NOISES[i].length; k++)
+	{
+		stockSamples.push("Noise Plethora::" + PLETHORA_CAT[i] + disPlethora + PLETHORA_NOISES[i][k] + disPlethora);
+	}
+}
 
 inline function getSetPresetList()
 {
@@ -104,44 +142,9 @@ getSetPresetList();
 inline function setNoiseSelectItems()
 {
 	allSamples.reserve(NUMBER_NOISES + userPresets.length);
-	allSamples = GEN_NOISES.clone();
-	
-	local disCore = "";
-	local disPlethora = "";
-	
-	if (!coreSamplesExists && !plethoraSamplesExists)
-	{
-		disCore = "~~";
-		disPlethora = "~~";
-	}
-	else if (coreSamplesExists && !plethoraSamplesExists)
-	{
-		disPlethora = "~~";
-	}
-	else if (!coreSamplesExists && plethoraSamplesExists)
-	{
-		disCore = "~~";	
-	}
-	
-	// Add Core Samples
-	for (i = 0; i < CORE_CAT.length; i++)
-	{
-		for (k = 0; k < CORE_NOISES[i].length; k++)
-		{
-			allSamples.push(CORE_CAT[i] + disCore + CORE_NOISES[i][k] + disCore);
-		}
-	}
-	
-	// Add Plethora Samples
-	for (i = 0; i < PLETHORA_CAT.length; i++)
-	{
-		for (k = 0; k < PLETHORA_NOISES[i].length; k++)
-		{
-			allSamples.push("Noise Plethora::" + PLETHORA_CAT[i] + disPlethora + PLETHORA_NOISES[i][k] + disPlethora);
-		}
-	}
-	
-	// Add Custom Semples
+	allSamples = stockSamples.clone();
+		
+	// Add Custom Samples
 	if (userPresets.length > 0)
 	{
 		for (p in userPresets)

@@ -1153,6 +1153,7 @@ pnlDuck.setTimerCallback(function()
 });
 
 // Host Transport
+const var sntumult = Synth.getEffect("Script FX1");
 const var th = Engine.createTransportHandler();
 
 inline function startDisplayTimer()
@@ -1221,7 +1222,6 @@ th.setOnBypass(function(value)
 });
 
 // Knob Switch
-const var sntumult = Synth.getEffect("Script FX1");
 const var pnlDuckBack = Content.getComponent("pnlDuckBack");
 const var pnlFollowBack = Content.getComponent("pnlFollowBack");
 
@@ -1296,21 +1296,77 @@ Content.getComponent("knbSwitch").setControlCallback(onknbSwitchControl);
 // Noise Select Buttons
 inline function onbtnSelectLeftControl(component, value)
 {
-	if (value)
+	if (!value)
+		return;
+	
+	if (!coreSamplesExists && !plethoraSamplesExists)
 	{
-		cmbSelect.setValue(cmbSelect.getValue() -1);
-		cmbSelect.changed();
+		if (cmbSelect.getValue() > 5 && cmbSelect.getValue() < 102)
+		{	
+			cmbSelect.setValue(5);
+			cmbSelect.changed();
+			return;
+		}
 	}
+	else if (coreSamplesExists && !plethoraSamplesExists)
+	{
+		if (cmbSelect.getValue() > 50 && cmbSelect.getValue() < 102)
+		{	
+			cmbSelect.setValue(50);
+			cmbSelect.changed();
+			return;
+		}
+	}
+	else if (!coreSamplesExists && plethoraSamplesExists)
+	{
+		if (cmbSelect.getValue() > 5 && cmbSelect.getValue() < 52)
+		{
+			cmbSelect.setValue(5);
+			cmbSelect.changed();
+			return;
+		}
+	}
+
+	cmbSelect.setValue(cmbSelect.getValue() -1);
+	cmbSelect.changed();
 };
 Content.getComponent("btnSelectLeft").setControlCallback(onbtnSelectLeftControl);
 
 inline function onbtnSelectRightControl(component, value)
 {
-	if (value)
+	if (!value)
+		return;
+	
+	if (!coreSamplesExists && !plethoraSamplesExists)
 	{
-		cmbSelect.setValue(cmbSelect.getValue() +1);
-		cmbSelect.changed();
+		if (cmbSelect.getValue() > 4 && cmbSelect.getValue() < 101)
+		{	
+			cmbSelect.setValue(101);
+			cmbSelect.changed();
+			return;
+		}
 	}
+	else if (coreSamplesExists && !plethoraSamplesExists)
+	{
+		if (cmbSelect.getValue() > 49 && cmbSelect.getValue() < 101)
+		{	
+			cmbSelect.setValue(101);
+			cmbSelect.changed();
+			return;
+		}
+	}
+	else if (!coreSamplesExists && plethoraSamplesExists)
+	{
+		if (cmbSelect.getValue() > 4 && cmbSelect.getValue() < 51)
+		{
+			cmbSelect.setValue(51);
+			cmbSelect.changed();
+			return;
+		}
+	}
+	
+	cmbSelect.setValue(cmbSelect.getValue() +1);
+	cmbSelect.changed();
 };
 Content.getComponent("btnSelectRight").setControlCallback(onbtnSelectRightControl);
 
