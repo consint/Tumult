@@ -15,8 +15,8 @@
                text="Settings" width="15.0" height="15.0" itemColour2="4284772207"
                itemColour="4284772207" textColour="4293321691" saveInPreset="0"/>
     <Component type="ScriptPanel" id="pnlError" x="130.0" y="8.0" parentComponent="pnlHeader"
-               width="220.0" height="20.0" text="Noise Plethora samples not found"
-               textColour="4293321691" itemColour2="4293321691" visible="0"/>
+               width="220.0" height="20.0" text="Core samples not found" textColour="4293321691"
+               itemColour2="4293321691" visible="0"/>
     <Component type="ScriptButton" id="btnLogo" x="20.0" y="6.0" parentComponent="pnlHeader"
                width="27.0" height="18.0" textColour="4293321691" isMomentary="1"
                saveInPreset="0"/>

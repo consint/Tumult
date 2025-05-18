@@ -19,7 +19,6 @@ In ‘Raw’ mode, the noise is played back without any influence. In ‘Duck’
 4. In order for Tumult to **find the samples**, the path to the sample folder must be specified in the plugin. To do this, open the plugin in a host of your choice, open the settings, select ‘Change Sample Folder Location’ and select the ‘TumultSamples’ folder. For the changes to take effect, you must remove the plugin from the host and reload it.
 
 ## Known bugs
-* The noise selection box shows tick marks in the wrong place. This is a bug in Hise that I have already [reported](https://github.com/christophhart/HISE/issues/739).
 * Drag & Drop does not work on Linux. This is a general problem for which there is, as far as I know, no generally applicable solution in JUCE.
 
 ## How to use

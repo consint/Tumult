@@ -574,6 +574,117 @@ laf.registerFunction("drawComboBox", function(g, obj)
     g.fillTriangle([a[0] + a[2] - h/2.75 - 10, a[1] + h/3, h/2.25, h/3.25], Math.PI);
 });
 
+// cmbSelect
+const var lafCmbSelect = Content.createLocalLookAndFeel();
+cmbSelect.setLocalLookAndFeel(lafCmbSelect);
+
+lafCmbSelect.registerFunction("drawComboBox", function(g, obj)
+{
+	 var a = obj.area;
+
+     g.setGradientFill([obj.itemColour2, 49, 0, obj.bgColour, 51, a[3]]);
+     g.fillRoundedRectangle(a, 3);
+ 
+     g.setColour(cmbSelect.get("textColour"));
+     g.setFont("Roboto-Medium", 13);
+     g.drawAlignedText(obj.text, [a[0] + 10, a[1], a[2]-10, a[3]], "left");
+     var h = a[3];
+     g.fillTriangle([a[0] + a[2] - h/2.75 - 10, a[1] + h/3, h/2.25, h/3.25], Math.PI);
+});
+
+const var p = Content.createPath();
+p.addTriangle([0, 0], [0, 1], [1, 0.5]);
+
+lafCmbSelect.registerFunction("drawPopupMenuItem", function(g, obj)
+{
+	var a = obj.area;
+	var txtColour = 0xBBE6E3DB;
+	g.setFont("Roboto-Medium", 13);
+
+	if (obj.isHighlighted && obj.isActive)
+	{
+		g.setGradientFill([cmbSelect.get("textColour"), 0, 0, 0x88E6E3DB, 0, a[3]]);
+		g.fillRect(a);
+		txtColour = 0xFF262929;
+	}
+	
+	if (!obj.isActive)
+		txtColour = 0x44E6E3DB;
+	
+	g.setColour(txtColour);
+	
+	// Submenu Triangle
+	if (obj.hasSubMenu)
+		g.fillPath(p, [a[2]-7, 7, 4, 7]);
+	
+	// Text
+	g.drawAlignedText(obj.text, [25, 1, a[2], a[3]], "left");
+	
+	// Ticked
+	var ticked = allSamples[cmbSelect.getValue()-1];
+
+	if (cmbSelect.getValue() < 6)
+	{
+		ticked = ticked.replace("Noise::", "");
+		if (obj.text == "Noise" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 5 && cmbSelect.getValue() < 11)
+	{
+		ticked = ticked.replace("Vinyl::", "");
+		if (obj.text == "Vinyl" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 10 && cmbSelect.getValue() < 17)
+	{
+		ticked = ticked.replace("Static::", "");
+		if (obj.text == "Static" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 16 && cmbSelect.getValue() < 28)
+	{
+		ticked = ticked.replace("Machine::", "");
+		if (obj.text == "Machine" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 27 && cmbSelect.getValue() < 33)
+	{
+		ticked = ticked.replace("Hum::", "");
+		if (obj.text == "Hum" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 32 && cmbSelect.getValue() < 51)
+	{
+		ticked = ticked.replace("World::", "");
+		if (obj.text == "World" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 50 && cmbSelect.getValue() < 68)
+	{
+		ticked = ticked.replace("Noise Plethora::A::", "");
+		if (obj.text == "Noise Plethora" && obj.hasSubMenu || obj.text == "A" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 67 && cmbSelect.getValue() < 78)
+	{
+		ticked = ticked.replace("Noise Plethora::B::", "");
+		if (obj.text == "Noise Plethora" && obj.hasSubMenu || obj.text == "B" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 77 && cmbSelect.getValue() < 101)
+	{
+		ticked = ticked.replace("Noise Plethora::C::", "");
+		if (obj.text == "Noise Plethora" && obj.hasSubMenu || obj.text == "C" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+	else if (cmbSelect.getValue() > 100)
+	{
+		ticked = ticked.replace("Custom::", "");
+		if (obj.text == "Custom" && obj.hasSubMenu || ticked == obj.text)
+			g.fillPath(check, [8, 6, 8, 10]);	
+	}
+});
+
 // Filter Switches Comboboxes
 const var lafCmbFilter = Content.createLocalLookAndFeel();
 const var cmbFilter2Switch = Content.getComponent("cmbFilter2Switch");
