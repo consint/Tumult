@@ -1065,8 +1065,6 @@ inline function onbtnBypassControl(component, value)
 Content.getComponent("btnBypass").setControlCallback(onbtnBypassControl);
 
 // btnSettings
-reg tmpCmbSelectValue = "White";
-
 inline function onbtnSettingsControl(component, value)
 {
 	pnlSettings.set("visible", value);
@@ -1074,13 +1072,15 @@ inline function onbtnSettingsControl(component, value)
 	if (!value)
 		return;
 	
-	tmpCmbSelectValue = cmbSelect.getItemText();
-	btnAdd.setValue(0);
-	btnAdd.changed();
+	if (btnAdd.getValue())
+	{
+		btnAdd.setValue(0);
+		btnAdd.changed();
+	}
 };
 Content.getComponent("btnSettings").setControlCallback(onbtnSettingsControl);
 
-// btnLogo>
+// btnLogo
 const var btnSettings = Content.getComponent("btnSettings");
 inline function onbtnLogoControl(component, value)
 {
@@ -1100,10 +1100,11 @@ inline function onbtnLogoControl(component, value)
 };
 Content.getComponent("btnLogo").setControlCallback(onbtnLogoControl);
 
+// btnAdd
+reg tmpCmbSelectValue = "White";
 reg masterGain = 0;
 reg masterMix = 0.5;
 
-// btnAdd
 inline function onbtnAddControl(component, value)
 {
 	pnlCustomSamples.set("visible", value);
@@ -1144,9 +1145,19 @@ inline function onbtnAddControl(component, value)
 		local index = allSamples.findIndex(function(element){ return element.contains(tmpCmbSelectValue);});
 
 		if (isDefined(index))
+		{
+			if (index > 4 && index < 50 && !coreSamplesExists)
+				index = 0;
+				
+			if (index > 49 && index < 100 && !plethoraSamplesExists)
+				index = 0;
+			
 			cmbSelect.setValue(index+1);
+		}
 		else
+		{
 			cmbSelect.setValue(1);
+		}
 		
 		cmbSelect.changed();
 		knbSwitch.changed();

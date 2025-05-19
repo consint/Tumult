@@ -721,7 +721,7 @@
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="follow_amount" MinValue="0.0" MaxValue="1.0" Value="0.5299999713897705"
+      <Parameter ID="follow_amount" MinValue="0.0" MaxValue="1.0" Value="0.01999999955296516"
                  DefaultValue="0.104">
         <Connections>
           <Connection NodeId="pma_unscaled" ParameterId="Multiply"/>

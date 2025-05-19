@@ -154,7 +154,6 @@ inline function setNoiseSelectItems()
 	}
 	
 	cmbSelect.set("items", allSamples.join("\n"));
-	cmbSelect.changed();
 }
 setNoiseSelectItems();
 
@@ -299,6 +298,10 @@ inline function customSave(name)
 // Delete
 inline function customDelete(name, animation)
 {
+	local tmp = sntumult.getAttribute(sntumult.switch_noise);
+	sntumult.setAttribute(sntumult.switch_noise, 0);
+	s.loadFile("");
+	
 	local f = customFolder.getChildFile(name + ".custom");
 	
 	if (!f.isFile())
@@ -308,6 +311,8 @@ inline function customDelete(name, animation)
 		startAnimation(true);
 	
 	f.deleteFileOrDirectory();
+	
+	sntumult.setAttribute(sntumult.switch_noise, tmp);
 }
 
 
