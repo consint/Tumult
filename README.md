@@ -39,6 +39,9 @@ Adjusts the volume of the noise. I have placed a **clipper** behind the noise so
 #### Noise selection
 The noise can be selected using the combo box or the two arrows next to it. The different sounds are divided into eight categories, whereby all sounds in the ‘Noise’ category are generated and the sounds in all other categories are samples. The ‘Custom’ category is only displayed once at least one of your own samples has been imported into Tumult.
 
+#### Add / "+"
+Opens the sample import window. "See Add / Import Samples"
+
 #### Mix
 Blends between the actual signal and the noise.
 
@@ -64,7 +67,7 @@ Click on the + at the top right of the plugin to open the sample import window.
 Clears the window and lets you import a new sample.
 
 #### Folder Import
-Opens another window that allows you to import all .wav files in a folder at once. Once you have selected a folder, the number of audio files to be imported is displayed. Use the gain and fade knobs to set the values for all samples. If you select ‘Normalise’, all samples are normalised during import. Depending on the size of the files and the sampling rate, this may take a little longer. Click on ‘Import’ if you want to start the import process. ‘Cancel’ cancels the import process and closes the “Folder Import” window.
+Opens another window that allows you to import all .wav files in a folder at once. Once you have selected a folder, the number of audio files to be imported is displayed. Use the gain and fade knobs to set the values for all samples. If you select ‘Normalise’, all samples are normalised during import. Depending on the size of the files and the sampling rate, this may take a little longer. It will use the name of the file as the name for the custom noise. If the name already exists, the import is skipped. It is therefore possible to collect all custom noises in one file folder. And if you add new samples, the entire folder can be reimported and only the new files are imported as custom noise. Click on ‘Import’ if you want to start the import process. ‘Cancel’ cancels the import process and closes the “Folder Import” window. 
 
 #### Load
 Here you can open existing samples for editing. Note that only a click on ‘Save’ saves the changes.
