@@ -1052,14 +1052,28 @@ lafCustom.registerFunction("drawRotarySlider", function(g, obj)
 	
 	g.setColour(Colours.withAlpha(obj.textColour, alpha));
 	
-	// Name
-	g.setFont("Roboto-Medium", 13);
-	g.drawAlignedText(obj.text, [a[3], 8, a[3], 10], "centred");
-	
-	// Value
-	g.setFont("Roboto-Medium", 12);
-	g.drawAlignedText(Engine.doubleToString(obj.value, 2), [a[3], 22.5, a[3], 10], "centred");
-	
+	// Name + Value
+	if (obj.text == "Gain")
+	{
+		// Name
+		g.setFont("Roboto-Medium", 13);
+		g.drawAlignedText(obj.text, [a[3]+5, 8, a[3]+10, 10], "centred");
+		
+		// Value
+		g.setFont("Roboto-Medium", 12);
+		g.drawAlignedText(Engine.doubleToString(obj.value, 2) + " dB", [a[3]+5, 22.5, a[3]+10, 10], "centred");
+	}
+	else
+	{
+		// Name
+		g.setFont("Roboto-Medium", 13);
+		g.drawAlignedText(obj.text, [a[3], 8, a[3], 10], "centred");
+		
+		// Value
+		g.setFont("Roboto-Medium", 12);
+		g.drawAlignedText(Engine.doubleToString(obj.value, 2), [a[3], 22.5, a[3], 10], "centred");
+	}
+
 	// Arc
 	var K = Content.createPath();
 	

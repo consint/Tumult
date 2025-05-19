@@ -1100,6 +1100,9 @@ inline function onbtnLogoControl(component, value)
 };
 Content.getComponent("btnLogo").setControlCallback(onbtnLogoControl);
 
+reg masterGain = 0;
+reg masterMix = 0.5;
+
 // btnAdd
 inline function onbtnAddControl(component, value)
 {
@@ -1122,8 +1125,17 @@ inline function onbtnAddControl(component, value)
 		
 		// set Switch to neutral
 		sntumult.setAttribute(sntumult.switch_branch, 2);
-		
 		tmpCmbSelectValue = cmbSelect.getItemText();
+		
+		// save and set gain and mix
+		masterGain = knbNoiseGain.getValue();
+		masterMix = knbMix.getValue();
+		
+		knbNoiseGain.setValue(0);
+		knbMix.setValue(0.5);
+		
+		knbNoiseGain.changed();
+		knbMix.changed();
 	}
 	else
 	{
@@ -1135,9 +1147,14 @@ inline function onbtnAddControl(component, value)
 			cmbSelect.setValue(index+1);
 		else
 			cmbSelect.setValue(1);
-			
+		
 		cmbSelect.changed();
 		knbSwitch.changed();
+		
+		knbNoiseGain.setValue(masterGain);
+		knbMix.setValue(masterMix);
+		knbNoiseGain.changed();
+		knbMix.changed();
 	}
 };
 Content.getComponent("btnAdd").setControlCallback(onbtnAddControl);

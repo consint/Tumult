@@ -10,7 +10,7 @@
           <ChildProcessors/>
           <Content>
             <Control type="ScriptSlider" id="knbNoiseGain" value="-10.0"/>
-            <Control type="ScriptComboBox" id="cmbSelect" value="1.0"/>
+            <Control type="ScriptComboBox" id="cmbSelect" value="1"/>
             <Control type="ScriptSlider" id="knbMix" value="0.5"/>
             <Control type="ScriptSlider" id="knbSwitch" value="0.0"/>
             <Control type="ScriptSlider" id="knbDuckRelease" value="15.0"/>
@@ -21,33 +21,33 @@
             <Control type="ScriptSlider" id="knbFollowThresh" value="-19.99999809265137"/>
             <Control type="ScriptButton" id="btnEqHpWEnable" value="0.0"/>
             <Control type="ScriptSlider" id="knbEqHpFreq" value="50.0"/>
-            <Control type="ScriptSlider" id="knbEqHpQ" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEqHpQ" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak1Enable" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbFilter2Switch" value="2.0"/>
             <Control type="ScriptSlider" id="knbEQPeak1Freq" value="175.0"/>
             <Control type="ScriptSlider" id="knbEQPeak1Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak1Q" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEQPeak1Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak2Enable" value="0.0"/>
             <Control type="ScriptSlider" id="knbEQPeak2Freq" value="600.0"/>
             <Control type="ScriptSlider" id="knbEQPeak2Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak2Q" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEQPeak2Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQPeak3Enable" value="0.0"/>
             <Control type="ScriptComboBox" id="cmbFilter4Switch" value="1.0"/>
             <Control type="ScriptSlider" id="knbEQPeak3req" value="2500.0"/>
             <Control type="ScriptSlider" id="knbEQPeak3Gain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbEQPeak3Q" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEQPeak3Q" value="0.00227481358148667"/>
             <Control type="ScriptButton" id="btnEQLPEnable" value="0.0"/>
             <Control type="ScriptSlider" id="knbEqLPFreq" value="8500.0"/>
-            <Control type="ScriptSlider" id="knbEqLPQ" value="0.00227481359615922"/>
+            <Control type="ScriptSlider" id="knbEqLPQ" value="0.00227481358148667"/>
             <Control type="ScriptComboBox" id="cmbSettingsAnalyzer" value="1.0"/>
             <Control type="ScriptComboBox" id="cmbSettingsHostPlay" value="1.0"/>
             <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data=""
                      rangeStart="0" rangeEnd="0"/>
-            <Control type="ScriptSlider" id="knbPlayerFade" value="0.0"/>
-            <Control type="ScriptSlider" id="knbPlayerGain" value="0.0"/>
-            <Control type="ScriptSlider" id="knbFolderFade" value="0.009999999776482582"/>
-            <Control type="ScriptSlider" id="knbFolderGain" value="0.0"/>
-            <Control type="ScriptButton" id="btnFolderNormalise" value="0.0"/>
+            <Control type="ScriptSlider" id="knbPlayerFade" value="0"/>
+            <Control type="ScriptSlider" id="knbPlayerGain" value="0"/>
+            <Control type="ScriptSlider" id="knbFolderFade" value="0.01"/>
+            <Control type="ScriptSlider" id="knbFolderGain" value="0"/>
+            <Control type="ScriptButton" id="btnFolderNormalise" value="0"/>
           </Content>
           <UIData Source="tumultUIData"/>
         </Processor>
