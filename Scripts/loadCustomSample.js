@@ -252,6 +252,9 @@ Content.getComponent("btnMissingCancel").setControlCallback(onbtnMissingCancelCo
 // Delete
 inline function onbtnMissingDeleteControl(component, value)
 {
+	if (!value)
+		return;
+
 	customDelete(pnlMsgMissingFile.get("text") , true);
 	pnlMsgMissingFile.set("visible", 0);
 	getSetPresetList();
@@ -299,13 +302,17 @@ inline function customSave(name)
 inline function customDelete(name, animation)
 {
 	local tmp = sntumult.getAttribute(sntumult.switch_noise);
+	Console.print(tmp);
 	sntumult.setAttribute(sntumult.switch_noise, 0);
 	s.loadFile("");
 	
 	local f = customFolder.getChildFile(name + ".custom");
 	
 	if (!f.isFile())
+	{
+		sntumult.setAttribute(sntumult.switch_noise, tmp);
 		return;
+	}
 	
 	if (animation)
 		startAnimation(true);
@@ -407,6 +414,9 @@ Content.getComponent("btnSavePreset").setControlCallback(onbtnSavePresetControl)
 // Yes
 inline function onbtnExistsYesControl(component, value)
 {
+	if (!value)
+		return;
+		
 	customDelete(currentPreset, false);
 	pnlMsgExists.set("visible", 0);
 	saveHandling();
@@ -435,6 +445,9 @@ Content.getComponent("btnPlayerDelete").setControlCallback(onbtnPlayerDeleteCont
 // Yes
 inline function onbtnDeleteYesControl(component, value)
 {
+	if (!value)
+		return;
+		
 	customDelete(currentPreset, true);
 	pnlMsgDelete.set("visible", 0);
 	getSetPresetList();
@@ -485,13 +498,17 @@ inline function clearFolderImport()
 
 inline function onbtnFImportCancelControl(component, value)
 {
-	clearFolderImport();
+	if (value)
+		clearFolderImport();
 };
 Content.getComponent("btnFImportCancel").setControlCallback(onbtnFImportCancelControl);
 
 // Select Folder
 inline function onbtnFImportSelectControl(component, value)
 {
+	if (!value)
+		return;
+
 	FileSystem.browseForDirectory(FileSystem.UserHome, function(result)
 	{
 		if (!result.isDirectory())

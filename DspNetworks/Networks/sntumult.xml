@@ -592,7 +592,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="noise_gain" MinValue="-35.0" MaxValue="35.0" StepSize="0.01"
-                 Value="-10.0" DefaultValue="-10.6">
+                 Value="0.0" DefaultValue="-10.6">
         <Connections>
           <Connection NodeId="gain4" ParameterId="Gain"/>
         </Connections>
@@ -740,13 +740,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="playerFade" MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
-                 Value="0.0">
+                 Value="0.009999999776482582" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="loopfadeplayer" ParameterId="fade"/>
         </Connections>
       </Parameter>
       <Parameter ID="playerGain" MinValue="-30.0" MaxValue="30.0" StepSize="0.1000000014901161"
-                 Value="4.47034832262716e-7" DefaultValue="4.470348358154297e-7">
+                 Value="0.1000004485249484" DefaultValue="4.470348358154297e-7">
         <Connections>
           <Connection NodeId="gain5" ParameterId="Gain"/>
         </Connections>
