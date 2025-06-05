@@ -989,6 +989,7 @@ lafFtEQ.registerFunction("drawFilterPath", function(g, obj)
 // FFT
 const var dbSource = Synth.getDisplayBufferSource("Script FX1");
 const var dbFFT = dbSource.getDisplayBuffer(2);
+const var btgFFT = Engine.createBackgroundTask("FFT");
 
 const var BUFFER_LENGTH_FFT = 4096;
 
@@ -1003,8 +1004,11 @@ const var pnlFFT = Content.getComponent("pnlFFT");
 
 pnlFFT.setTimerCallback(function()
 {
-		this.data.buffer = dbFFT.createPath(this.getLocalBounds(0), [0, BUFFER_LENGTH_FFT, 0, 1.0], 0.0);
-		this.repaint();
+	btgFFT.callOnBackgroundThread(function(param)
+	{
+		pnlFFT.data.buffer = dbFFT.createPath(pnlFFT.getLocalBounds(0), [0, BUFFER_LENGTH_FFT, 0, 1.0], 0.0);
+		pnlFFT.repaint();
+	});
 });
 
 pnlFFT.setPaintRoutine(function(g)
@@ -1251,6 +1255,7 @@ Content.getComponent("btnKofi").setControlCallback(onbtnKofiControl);
 const var dbDuck = dbSource.getDisplayBuffer(0);
 const var dbFollow = dbSource.getDisplayBuffer(1);
 const var pnlDuck = Content.getComponent("pnlDuck");
+const var btkGate = Engine.createBackgroundTask("gate");
 
 reg isModulatet = 0;
 reg isPlaying = 0;
@@ -1273,17 +1278,26 @@ pnlDuck.setPaintRoutine(function(g)
 	g.setGradientFill([pnlDuck.get("itemColour"), 35, 0, pnlDuck.get("bgColour"), 45, a[3]]);
 	g.fillRoundedRectangle(a, 3);
 	
-	var dbDuckPath = dbDuck.createPath(a, [0, BUFFER_LENGTH_GATE, 0, 1.0], 0.0);
-	var dbFollowPath = dbFollow.createPath(a, [0, BUFFER_LENGTH_GATE, 0, 1.0], 0.0);
-	
 	g.setColour(pnlDuck.get("textColour"));
 
 	if (isModulatet == 1 && isRunning)
-		g.drawPath(dbDuckPath, [-1, 3, a[2]+2, a[3]-6], 1);
+	{
+		btkGate.callOnBackgroundThread(function(param)
+		{
+			pnlDuck.data.duck = dbDuck.createPath(pnlDuck.getLocalBounds(0), [0, BUFFER_LENGTH_GATE, 0, 1.0], 0.0);
+		});
+		
+		g.drawPath(pnlDuck.data.duck, [-1, 3, a[2]+2, a[3]-6], 1);
+	}
 	else if (isModulatet == 2 && isRunning)
 	{
+		btkGate.callOnBackgroundThread(function(param)
+		{
+			pnlDuck.data.follow = dbFollow.createPath(pnlDuck.getLocalBounds(0), [0, BUFFER_LENGTH_GATE, 0, 1.0], 0.0);
+		});
+		
 		g.flip(false, a);
-		g.drawPath(dbFollowPath, [-1, 3, a[2]+2, a[3]-6], 1);
+		g.drawPath(pnlDuck.data.follow, [-1, 3, a[2]+2, a[3]-6], 1);
 	}
 });
 pnlDuck.setTimerCallback(function()
