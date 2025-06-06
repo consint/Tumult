@@ -79,8 +79,8 @@
                min="-1.0"/>
     <Component type="ScriptPanel" id="pnlDuckBack" x="215.0" y="10.0" width="240.0"
                height="160.0" borderSize="0.0" borderRadius="60.0" parentComponent="pnlSwitch"
-               itemColour="0" itemColour2="0" textColour="4284904050" enabled="0"
-               visible="0">
+               itemColour="0" itemColour2="0" textColour="4284904050" visible="0"
+               enabled="0">
       <Component type="ScriptSlider" id="knbDuckRelease" x="160.0" y="60.0" text="Release"
                  processorId="Script FX1" parameterId="duck_attack" max="500.0"
                  parentComponent="pnlDuckBack" width="50.0" height="80.0" bgColour="4281941823"

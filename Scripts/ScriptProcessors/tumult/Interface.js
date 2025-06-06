@@ -1322,6 +1322,8 @@ inline function startDisplayTimer()
 		{
 			pnlDuck.stopTimer();
 			isRunning = 0;
+			pnlDuck.data.duck = 0;
+			pnlDuck.data.follow = 0;
 			pnlDuck.repaint();
 		}
 	}
@@ -1353,25 +1355,6 @@ th.setOnTransportChange(false, function(value)
     {
 	    startDisplayTimer();
     }
-});
-
-const var btnBypass = Content.getComponent("btnBypass");
-
-th.setOnBypass(function(value)
-{
-	if (value)
-	{
-		btnBypass.setValue(0);
-		btnBypass.set("enabled", 0);
-	}
-	else
-	{
-		btnBypass.setValue(1);
-		btnBypass.set("enabled", 1);
-		
-		if (sntumult.isBypassed())
-			btnBypass.changed();
-	}
 });
 
 // Knob Switch
