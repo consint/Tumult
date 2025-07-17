@@ -14,7 +14,7 @@ In ‘Raw’ mode, the noise is played back without any influence. In ‘Duck’
 
 ## How to install
 1. Unzip the downloaded file.
-2. Copy the entire ‘Tumult.vst3’ folder into the vst folder of your operating system. For Linux, this is the .vst3 folder in the home directory. For Windows, this is in ‘C:\\Program Files\\Common Files\\VST3’.
+2. Copy the entire ‘Tumult.vst3’ or ‘Tumult’ folder into the vst folder of your operating system. For Linux, this is the .vst3 folder in the home directory. For Windows, this is in ‘C:\\Program Files\\Common Files\\VST3’.
 3. Copy the ‘TumultSamples’ folder wherever you want, for example to a location where you also save other samples.
 4. In order for Tumult to **find the samples**, the path to the sample folder must be specified in the plugin. To do this, open the plugin in a host of your choice, open the settings, select ‘Change Sample Folder Location’ and select the ‘TumultSamples’ folder. For the changes to take effect, you must remove the plugin from the host and reload it.
 
